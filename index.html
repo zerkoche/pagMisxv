@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Evento</title>
+  <!-- Vinculación con el archivo de estilos externo -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- =======================================================
+       1. ENCABEZADO FIJO
+       ======================================================= -->
+<header class="encabezado-fijo">
+  <!-- Contenedor central para Título pequeño y Subtítulo grande -->
+  <div class="bloque-titulos-encabezado">
+    <span class="titulo-pequeno">MIS XV AÑOS</span>
+    <h1 class="subtitulo-grande">MIA NAHOMI</h1>
+  </div>
+  
+  <button class="btn-encabezado">Confirmar asistencia</button>
+</header>
+
+
+  <!-- =======================================================
+       CONTENIDO PRINCIPAL
+       ======================================================= -->
+  <main class="contenedor-principal">
+
+    <!-- 2. PRIMERA CAJA DE TEXTO -->
+    <section class="caja-contenido">
+      
+      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIT UNO DE LOS MIOS CONTIGO</p>
+    </section>
+
+
+    <!-- 3. ESPACIO PARA IMAGEN -->
+    <section class="contenedor-imagen">
+      <img src="" alt="Imagen destacada del evento">
+    </section>
+
+
+    <!-- 4. REPRODUCTOR DE AUDIO (LOCAL Y YOUTUBE) -->
+    <section class="caja-contenido seccion-audio">
+      <h2></h2>
+      
+     <div class="audio-bloque">
+        <label><strong>escucha</strong></label>
+        <audio controls class="reproductor-audio">
+          <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
+          Tu navegador no soporta el reproductor de audio.
+        </audio>
+      </div>
+
+      <!--  <div class="audio-bloque">
+        <label><strong>Audio desde YouTube:</strong></label>
+        <div class="contenedor-video-responsive">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="Reproductor de YouTube" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- 5. SEGUNDA CAJA DE TEXTO -->
+    <section class="caja-contenido">
+   
+      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIT UNO DE LOS MIOS CONTIGO</p>
+    </section>
+
+
+    <!-- 6. CUENTA REGRESIVA (SE DETIENE EN CERO) -->
+    <section class="caja-contenido">
+      <h2 class="texto-centrado">Tiempo Restante</h2>
+      <div class="cuenta-regresiva">
+        
+        <div class="unidad-tiempo">
+          <span id="dias" class="numero-tiempo">00</span>
+          <span class="etiqueta-tiempo">Días</span>
+        </div>
+
+        <div class="unidad-tiempo">
+          <span id="horas" class="numero-tiempo">00</span>
+          <span class="etiqueta-tiempo">Horas</span>
+        </div>
+
+        <div class="unidad-tiempo">
+          <span id="minutos" class="numero-tiempo">00</span>
+          <span class="etiqueta-tiempo">Minutos</span>
+        </div>
+
+        <div class="unidad-tiempo">
+          <span id="segundos" class="numero-tiempo">00</span>
+          <span class="etiqueta-tiempo">Segundos</span>
+        </div>
+
+      </div>
+
+      <!-- Mensaje que se mostrará cuando el contador llegue a cero -->
+      <p id="mensaje-evento" class="texto-centrado" style="margin-top: 15px; font-weight: bold; color: #28a745; display: none;">
+        ¡El evento ha comenzado!
+      </p>
+    </section>
+
+
+ <!-- 7. SECCIÓN DE 3 BOTONES (HORIZONTAL EN DESKTOP, VERTICAL AJUSTADO EN MÓVIL) -->
+<section class="galeria-botones-adaptable">
+
+  <!-- Botón 1 -->
+  <a href="https://www.tu-enlace-1.com" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+    <img src="canva/asset/cruz.png" alt="Icono 1" class="img-boton">
+    <span class="texto-boton">CEREMONIA</span>
+    <H6>16:45 HRS</H6>
+  </a>
+
+  <!-- Botón 2 -->
+  <a href="https://www.tu-enlace-2.com" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+    <img src="canva/asset/pin.png" alt="Icono 2" class="img-boton">
+    <span class="texto-boton">RECEPCION</span>
+    <H6>18:30 HRS</H6>
+  </a>
+
+  <!-- Botón 3 -->
+  <a href="https://www.tu-enlace-3.com" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+    <img src="canva/asset/banquete.png" alt="Icono 3" class="img-boton">
+    <span class="texto-boton">BANQUETE</span>
+    <H6>19:30 HRS</H6>
+  </a>
+
+</section>
+
+
+    <!-- 8. DOS CAJAS DE TEXTO Y TABLA DE 2x2 -->
+  <h2 class="titulo-seccion-elegante">DRESS CODE</h2>
+  <span class="titulo-pequeno">FORMAL</span>
+  <!-- Caja 1 con Imagen y Texto -->
+<section class="caja-contenido">
+  <h2>RECOMENDADO</h2>
+  <div class="caja-cuerpo">
+    <div class="caja-imagen">
+      <img src="canva/asset/LIKE.png" alt="Detalle Información">
+    </div>
+    <div class="caja-texto">
+      <p>colores obscuros como Negro, gris oscuro , morado oscuro o verde olivo</p>
+    </div>
+  </div>
+</section>
+
+<!-- Caja 2 con Imagen y Texto -->
+<section class="caja-contenido">
+  <h2>NO USAR</h2>
+  <div class="caja-cuerpo">
+    <div class="caja-imagen">
+      <img src="canva/asset/UNLIKE.png" alt="Detalle Programa">
+    </div>
+    <div class="caja-texto">
+      <p>colroes clados, dorado, azul oscuro, plateado</p>
+    </div>
+  </div>
+</section>
+
+    <section class="caja-contenido">
+      <h2>Tabla de Horarios</h2>
+      <div class="contenedor-tabla">
+        <table class="tabla-personalizada">
+          <thead>
+            <tr>
+              <th>Encabezado 1</th>
+              <th>Encabezado 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dato A1</td>
+              <td>Dato A2</td>
+            </tr>
+            <tr>
+              <td>Dato B1</td>
+              <td>Dato B2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+    <!-- 9. CAJA DE TEXTO ADICIONAL -->
+    <section class="caja-contenido">
+      <h2>Últimas Recomendaciones</h2>
+      <p>Asegúrate de revisar todos los detalles antes de dar clic en el botón de confirmación final.</p>
+    </section>
+
+
+    <!-- 10. BOTÓN CON TÍTULO ARRIBA -->
+    <section class="caja-contenido seccion-boton-final">
+      <h2>¿Listo para acompañarnos?</h2>
+      <button class="btn-final">Regístrate Aquí</button>
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       CÓDIGO JAVASCRIPT DE LA CUENTA REGRESIVA
+       ======================================================= -->
+  <script>
+    // Fecha objetivo del evento (Año, Mes [0=Enero, 11=Diciembre], Día, Hora, Minutos, Segundos)
+    // Cambia estos valores por la fecha real de tu evento:
+    const fechaEvento = new Date(2026, 11, 31, 23, 59, 59).getTime();
+
+    const temporizador = setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaEvento - ahora;
+
+      // Si el tiempo llega a cero o se sobrepasa
+      if (diferencia <= 0) {
+        clearInterval(temporizador); // Detiene el contador por completo
+
+        // Congela los contadores exactamente en cero
+        document.getElementById("dias").innerText = "00";
+        document.getElementById("horas").innerText = "00";
+        document.getElementById("minutos").innerText = "00";
+        document.getElementById("segundos").innerText = "00";
+
+        // Muestra el mensaje de finalización
+        const mensaje = document.getElementById("mensaje-evento");
+        if (mensaje) {
+          mensaje.style.display = "block";
+        }
+        return;
+      }
+
+      // Cálculos matemáticos del tiempo restante
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      // Inyecta los números formateados a 2 dígitos
+      document.getElementById("dias").innerText = String(dias).padStart(2, '0');
+      document.getElementById("horas").innerText = String(horas).padStart(2, '0');
+      document.getElementById("minutos").innerText = String(minutos).padStart(2, '0');
+      document.getElementById("segundos").innerText = String(segundos).padStart(2, '0');
+    }, 1000);
+  </script>
+
+</body>
+</html>

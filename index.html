@@ -90,11 +90,11 @@
     </section> -->
 
 
-    <!-- 5. SEGUNDA CAJA DE TEXTO -->
+    <!-- 5. SEGUNDA CAJA DE TEXTO 
     <section class="caja-contenido">
    
-      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIT UNO DE LOS MIOS CONTIGO</p>
-    </section>
+      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
+    </section>-->
 
 
     <!-- 6. CUENTA REGRESIVA (SE DETIENE EN CERO) -->
@@ -204,10 +204,15 @@
      SECCIÓN CON TEXTO Y BOTÓN CON IMAGEN DEBAJO
      ======================================================= -->
 <section class="caja-contenido caja-texto-boton">
-  <!-- 1. Texto descriptivo superior -->
+  <!-- =======================================================
+     SECCIÓN DE TEXTO CON ANIMACIÓN DE APARICIÓN
+     ======================================================= -->
+<section class="caja-contenido">
+  <!-- 1. Texto descriptivo superior con animación -->
   <p class="texto-seccion-bloque">
-   Tu presencia es mi mejor regalo. Pero si no sabes que Obsequiarme y deseas tener un detalle conmigo. ¡ ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
-  </p>
+    Tu presencia es mi mejor regalo. Pero si no sabes que obsequiarme y deseas tener un detalle conmigo, ¡ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
+  </p> 
+</section>
 <BR></BR>
   <!-- 2. Botón con imagen debajo -->
   <div class="contenedor-boton-inferior">
@@ -427,5 +432,35 @@
       }
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Seleccionamos todos los textos que queramos animar al hacer scroll
+    const textosAnimados = document.querySelectorAll('.texto-seccion-bloque');
+
+    const opcionesObservador = {
+      root: null, // Usa la ventana del navegador como referencia
+      threshold: 0.2 // Se activa cuando al menos el 20% del texto es visible en pantalla
+    };
+
+    const callbackObservador = (entradas, observador) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          // El texto entra en pantalla: agregamos la clase para que suba y aparezca
+          entrada.target.classList.add('visible');
+        } else {
+          // El texto sale de la pantalla: quitamos la clase para que se reinicie al volver
+          entrada.target.classList.remove('visible');
+        }
+      });
+    };
+
+    const observador = new IntersectionObserver(callbackObservador, opcionesObservador);
+
+    // Ponemos a vigilar cada párrafo con esa clase
+    textosAnimados.forEach(texto => {
+      observador.observe(texto);
+    });
+  });
+</script>
 </body>
 </html>

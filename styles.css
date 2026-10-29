@@ -152,6 +152,35 @@ body {
 .btn-encabezado:hover {
   background-color: #0056b3;
 }
+/* =======================================================
+   ESTILOS Y CLASE DE ANIMACIÓN AL ENTRAR EN PANTALLA
+   ======================================================= */
+.texto-seccion-bloque {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2d3748;
+  text-align: center;
+  
+  /* Estado inicial: invisible y abajo */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cuando JavaScript añade esta clase, se ejecuta la animación */
+.texto-seccion-bloque.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 600px) {
+  .texto-seccion-bloque {
+    font-size: 0.95rem;
+  }
+}
 
 /* =======================================================
    3. CONTENEDOR PRINCIPAL Y CAJAS SEMITRANSPARENTES

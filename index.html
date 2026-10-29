@@ -45,17 +45,33 @@
     </section>
 
 
-    <!-- 4. REPRODUCTOR DE AUDIO (LOCAL Y YOUTUBE) -->
-    <section class="caja-contenido seccion-audio">
-      <h2></h2>
-      
-     <div class="audio-bloque">
-        <label><strong>escucha</strong></label>
-        <audio controls class="reproductor-audio">
-          <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
-          Tu navegador no soporta el reproductor de audio.
-        </audio>
-      </div>
+   <!-- REPRODUCTOR MINIMALISTA (LÍNEA DE TIEMPO + BOTÓN PLAY) -->
+<!-- REPRODUCTOR CON BOTÓN QUE SE PEGA AL HEADER AL HACER SCROLL -->
+<div class="reproductor-minimalista">
+  <!-- Audio nativo (oculto) -->
+  <audio id="miAudio" preload="metadata" loop>
+    <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
+    Tu navegador no soporta el reproductor de audio.
+  </audio>
+
+  <!-- Línea de tiempo arriba -->
+  <div class="contenedor-progreso" id="contenedorProgreso">
+    <div class="barra-progreso" id="barraProgreso"></div>
+  </div>
+
+  <!-- Contenedor ancla para el botón -->
+  <div class="contenedor-boton-audio" id="anclaBotonAudio">
+    <!-- Botón Play/Pause -->
+    <button id="btnPlayPause" class="btn-play-minimalista" aria-label="Reproducir o Pausar">
+      <svg id="iconoPlay" class="icono-reproductor" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="iconoPause" class="icono-reproductor oculto" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+  </div>
+</div>
 
       <!--  <div class="audio-bloque">
         <label><strong>Audio desde YouTube:</strong></label>
@@ -167,6 +183,11 @@
     </div>
   </div>
 </section>
+<section class="caja-contenido caja-frase">
+  <p class="texto-frase">
+    “Tonos oscuros para brillar bajo las estrellas”
+  </p>
+</section>
 
     <section class="caja-contenido">
       <h2>Tabla de Horarios</h2>
@@ -252,6 +273,137 @@
       document.getElementById("segundos").innerText = String(segundos).padStart(2, '0');
     }, 1000);
   </script>
+   <script>
+ setInterval(actualizarContador, 1000);
+    actualizarContador();
 
+    // 2. REPRODUCTOR DE MÚSICA CORREGIDO
+    const audio = document.getElementById("miAudio");
+    const btnPlayPause = document.getElementById("btnPlayPause");
+    const iconoPlay = document.getElementById("iconoPlay");
+    const iconoPause = document.getElementById("iconoPause");
+    const barraProgreso = document.getElementById("barraProgreso");
+    const contenedorProgreso = document.getElementById("contenedorProgreso");
+    const anclaBotonAudio = document.getElementById("anclaBotonAudio");
+
+    // Forzar carga limpia del archivo de audio
+    audio.load();
+
+    // Función principal para alternar Play/Pause
+    function alternarReproduccion(e) {
+      if (e) e.stopPropagation(); // Evita interferencias de eventos globales
+
+      if (audio.paused) {
+        const promesaPlay = audio.play();
+        if (promesaPlay !== undefined) {
+          promesaPlay.then(() => {
+            iconoPlay.classList.add("oculto");
+            iconoPause.classList.remove("oculto");
+          }).catch(error => {
+            console.error("El navegador bloqueó la reproducción:", error);
+          });
+        }
+      } else {
+        audio.pause();
+        iconoPlay.classList.remove("oculto");
+        iconoPause.classList.add("oculto");
+      }
+    }
+
+    // Escuchar el clic en el botón
+    btnPlayPause.addEventListener("click", alternarReproduccion);
+
+    // Actualización de la barra de progreso
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration && !isNaN(audio.duration)) {
+        const porcentaje = (audio.currentTime / audio.duration) * 100;
+        barraProgreso.style.width = porcentaje + "%";
+      }
+    });
+
+    // Control de la barra de tiempo
+    contenedorProgreso.addEventListener("click", (e) => {
+      const rect = contenedorProgreso.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (audio.duration && !isNaN(audio.duration)) {
+        audio.currentTime = (clickX / rect.width) * audio.duration;
+      }
+    });
+
+    // Resetear al finalizar (si no está en loop)
+    audio.addEventListener("ended", () => {
+      iconoPlay.classList.remove("oculto");
+      iconoPause.classList.add("oculto");
+      barraProgreso.style.width = "0%";
+    });
+
+    // 3. LÓGICA STICKY EN EL HEADER
+    window.addEventListener("scroll", () => {
+      if (anclaBotonAudio) {
+        const posicionAncla = anclaBotonAudio.getBoundingClientRect().top;
+        if (posicionAncla < 70) {
+          btnPlayPause.classList.add("fijo-en-header");
+        } else {
+          btnPlayPause.classList.remove("fijo-en-header");
+        }
+      }
+    });
+
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("miAudio");
+    const btnPlayPause = document.getElementById("btnPlayPause");
+    const iconoPlay = document.getElementById("iconoPlay");
+    const iconoPause = document.getElementById("iconoPause");
+    const barraProgreso = document.getElementById("barraProgreso");
+    const contenedorProgreso = document.getElementById("contenedorProgreso");
+    const anclaBotonAudio = document.getElementById("anclaBotonAudio");
+
+    // 1. Funcionalidad de Play / Pause
+    btnPlayPause.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          iconoPlay.classList.add("oculto");
+          iconoPause.classList.remove("oculto");
+        }).catch(err => console.log("Se requiere interacción directa"));
+      } else {
+        audio.pause();
+        iconoPlay.classList.remove("oculto");
+        iconoPause.classList.add("oculto");
+      }
+    });
+
+    // 2. Avance de la barra de progreso
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration) {
+        const porcentaje = (audio.currentTime / audio.duration) * 100;
+        barraProgreso.style.width = porcentaje + "%";
+      }
+    });
+
+    // 3. Salto en la línea de tiempo al hacer clic
+    contenedorProgreso.addEventListener("click", (e) => {
+      const rect = contenedorProgreso.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      if (audio.duration) {
+        audio.currentTime = (clickX / rect.width) * audio.duration;
+      }
+    });
+
+    // 4. LÓGICA STICKY EN EL HEADER AL HACER SCROLL
+    window.addEventListener("scroll", () => {
+      // Obtiene la posición del contenedor ancla con respecto a la pantalla
+      const posicionAncla = anclaBotonAudio.getBoundingClientRect().top;
+      
+      // Si el contenedor ancla sube y pasa la altura del header (aprox 80px), fija el botón
+      if (posicionAncla < 70) {
+        btnPlayPause.classList.add("fijo-en-header");
+      } else {
+        btnPlayPause.classList.remove("fijo-en-header");
+      }
+    });
+  });
+</script>
 </body>
 </html>

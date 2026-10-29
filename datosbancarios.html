@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="stylesdatb.css">
+    <title>Transferencia</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYUDAME CON MI SUEÑO</title>
+
+  <!-- Fuentes del proyecto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =======================================================
+       1. ENCABEZADO FIJO (MISMO QUE LA PÁGINA PRINCIPAL)
+       ======================================================= -->
+  <header class="encabezado-fijo">
+    <div class="bloque-titulos-encabezado">
+      <span class="titulo-pequeno">MIS XV AÑOS</span>
+      <h1 class="subtitulo-grande">MIA NAHOMI</h1>
+    </div>
+    
+    <button class="btn-encabezado">Confirmar asistencia</button>
+  </header>
+
+  <!-- =======================================================
+       CONTENIDO PRINCIPAL
+       ======================================================= -->
+  <main class="contenedor-principal">
+
+    <!-- 1. ESPACIO DE TEXTO SUPERIOR -->
+    <section class="caja-contenido">
+      <h2 class="titulo-cinzel texto-seccion-bloque"></h2>
+      <p class="texto-principal-playfair texto-seccion-bloque">
+        Tu presencia es mi mayor regalo, pero si deseas hacerme un detalle, puedes realizar una transferencia o depósito a la siguiente cuenta bancaria:
+      </p>
+    </section>
+
+    <!-- 2. TARJETA BANCARIA DIGITAL (5 FILAS / COLUMNAS CON BOTÓN DE COPIAR) -->
+    <section class="tarjeta-bancaria texto-seccion-bloque">
+      
+      <!-- Detalle visual superior de la tarjeta -->
+      <div class="tarjeta-header">
+        <span class="tarjeta-chip"></span>
+        <span class="tarjeta-marca">TRANSFERENCIA / DEPRÓSITO</span>
+      </div>
+
+      <!-- Contenedor de las 5 filas de datos -->
+      <div class="tarjeta-datos">
+
+        <!-- Fila 1: Banco -->
+        <div class="fila-dato">
+          <div class="info-dato">
+            <span class="etiqueta-dato">Banco</span>
+            <span class="valor-dato" id="dato-banco">banco1</span>
+          </div>
+          <button class="btn-copiar" onclick="copiarTexto('dato-banco', this)">Copiar</button>
+        </div>
+
+        <!-- Fila 2: Titular -->
+        <div class="fila-dato">
+          <div class="info-dato">
+            <span class="etiqueta-dato">Titular</span>
+            <span class="valor-dato" id="dato-titular"></span>
+          </div>
+          <button class="btn-copiar" onclick="copiarTexto('dato-titular', this)">Copiar</button>
+        </div>
+
+        <!-- Fila 3: Número de Cuenta -->
+        <div class="fila-dato">
+          <div class="info-dato">
+            <span class="etiqueta-dato">Número de Cuenta</span>
+            <span class="valor-dato" id="dato-cuenta"></span>
+          </div>
+          <button class="btn-copiar" onclick="copiarTexto('dato-cuenta', this)">Copiar</button>
+        </div>
+
+        <!-- Fila 4: CLABE Interbancaria -->
+        <div class="fila-dato">
+          <div class="info-dato">
+            <span class="etiqueta-dato">CLABE Interbancaria</span>
+            <span class="valor-dato" id="dato-clabe"></span>
+          </div>
+          <button class="btn-copiar" onclick="copiarTexto('dato-clabe', this)">Copiar</button>
+        </div>
+
+        <!-- Fila 5: Tarjeta -->
+        <div class="fila-dato">
+          <div class="info-dato">
+            <span class="etiqueta-dato">Número de Tarje</span>
+          </div>
+          <button class="btn-copiar" onclick="copiarTexto('dato-tarjeta', this)">Copiar</button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =======================================================
+       SCRIPTS: ANIMACIÓN DE ENTRADA Y FUNCIÓN DE COPIAR
+       ======================================================= -->
+  <script>
+    // Función para copiar el texto al portapapeles
+    function copiarTexto(idElemento, boton) {
+      const texto = document.getElementById(idElemento).innerText;
+      
+      navigator.clipboard.writeText(texto).then(() => {
+        const textoOriginal = boton.innerText;
+        boton.innerText = "¡Copiado!";
+        boton.classList.add("copiado");
+
+        setTimeout(() => {
+          boton.innerText = textoOriginal;
+          boton.classList.remove("copiado");
+        }, 2000);
+      });
+    }
+
+    // IntersectionObserver para las animaciones de scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const elementosAnimados = document.querySelectorAll('.texto-seccion-bloque');
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+          } else {
+            entrada.target.classList.remove('visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elementosAnimados.forEach(elem => observador.observe(elem));
+    });
+  </script>
+
+</body>
+</html>
+</body>
+</html>

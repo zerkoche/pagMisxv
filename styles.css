@@ -421,6 +421,61 @@ body {
   }
 }
 /* =======================================================
+   IMAGEN CENTRADA CON ANIMACIÓN MUSICAL (BALANCEO)
+   ======================================================= */
+.caja-imagen-animada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px;
+}
+
+.contenedor-imagen-ritmo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.img-balanceo-musical {
+  width: 100%;
+  max-width: 280px; /* Tamaño elegante y bien proporcionado para escritorio */
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Si es una foto rectangular; si es un icono transparente no le afecta */
+  margin: 0 auto;
+  
+  /* Animación pendular/musical continua */
+  transform-origin: bottom center; /* Hace que se pivoTEE desde la base como un metrónomo */
+  animation: balanceoMusical 2.8s ease-in-out infinite;
+}
+
+/* Keyframes de la animación de balanceo suave */
+@keyframes balanceoMusical {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg); /* Inclinación a la izquierda */
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(6deg);  /* Inclinación a la derecha */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Adaptación responsiva para móviles */
+@media (max-width: 600px) {
+  .img-balanceo-musical {
+    max-width: 200px; /* Tamaño cómodo y contenido para pantallas pequeñas */
+  }
+}
+/* =======================================================
    8. TABLA 2x2
    ======================================================= */
    .titulo-seccion-elegante {

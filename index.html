@@ -179,7 +179,7 @@
       <img src="canva/asset/UNLIKE.png" alt="Detalle Programa">
     </div>
     <div class="caja-texto">
-      <p>colroes clados, dorado, azul oscuro, plateado</p>
+      <p>colroes claros, dorado, azul oscuro, plateado</p>
     </div>
   </div>
 </section>
@@ -187,45 +187,39 @@
   <p class="texto-frase">
     “Tonos oscuros para brillar bajo las estrellas”
   </p>
+  <!-- =======================================================
+     SECCIÓN DE IMAGEN CENTRADA CON ANIMACIÓN MUSICAL
+     ======================================================= -->
+<section class="caja-contenido caja-imagen-animada">
+  <div class="contenedor-imagen-ritmo">
+    <img src="canva/asset/musica.png" alt="Detalle Musical" class="img-balanceo-musical">
+  </div>
+</section>
 </section>
 
-    <section class="caja-contenido">
-      <h2>Tabla de Horarios</h2>
-      <div class="contenedor-tabla">
-        <table class="tabla-personalizada">
-          <thead>
-            <tr>
-              <th>Encabezado 1</th>
-              <th>Encabezado 2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dato A1</td>
-              <td>Dato A2</td>
-            </tr>
-            <tr>
-              <td>Dato B1</td>
-              <td>Dato B2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <!-- =======================================================
+     SECCIÓN CON TEXTO Y BOTÓN CON IMAGEN DEBAJO
+     ======================================================= -->
+<section class="caja-contenido caja-texto-boton">
+  <!-- 1. Texto descriptivo superior -->
+  <p class="texto-seccion-bloque">
+   Tu presencia es mi mejor regalo. Pero si no sabes que Obsequiarme y deseas tener un detalle conmigo. ¡ ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
+  </p>
+<BR></BR>
+  <!-- 2. Botón con imagen debajo -->
+  <div class="contenedor-boton-inferior">
+    <a href="https://www.tu-enlace.com" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+      <img src="canva/asset/MICROFONO.png" alt="Confirmar Asistencia" class="img-boton">
+      <span class="texto-boton">da click</span>
+    </a>
+  </div>
+</section>
+ 
 
-
-    <!-- 9. CAJA DE TEXTO ADICIONAL -->
-    <section class="caja-contenido">
-      <h2>Últimas Recomendaciones</h2>
-      <p>Asegúrate de revisar todos los detalles antes de dar clic en el botón de confirmación final.</p>
-    </section>
-
-
-    <!-- 10. BOTÓN CON TÍTULO ARRIBA -->
-    <section class="caja-contenido seccion-boton-final">
-      <h2>¿Listo para acompañarnos?</h2>
-      <button class="btn-final">Regístrate Aquí</button>
-    </section>
+   
+    </a>
+  </div>
+</section>
 
   </main>
 
@@ -236,7 +230,7 @@
   <script>
     // Fecha objetivo del evento (Año, Mes [0=Enero, 11=Diciembre], Día, Hora, Minutos, Segundos)
     // Cambia estos valores por la fecha real de tu evento:
-    const fechaEvento = new Date(2026, 11, 31, 23, 59, 59).getTime();
+    const fechaEvento = new Date(2026, 9, 28, 23, 59, 59).getTime();
 
     const temporizador = setInterval(function() {
       const ahora = new Date().getTime();

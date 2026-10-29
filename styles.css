@@ -49,6 +49,21 @@
     left: -160px;
   }
 }
+/* =======================================================
+   ESTILOS PARA EL EFECTO MÁQUINA DE ESCRIBIR
+   ======================================================= */
+.efecto-maquina::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  animation: parpadeoCursor 0.7s infinite;
+  color: #718096; /* Color sutil del cursor */
+}
+
+@keyframes parpadeoCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   

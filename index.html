@@ -29,16 +29,17 @@
 </header>
 
 
-  <!-- =======================================================
-       CONTENIDO PRINCIPAL
-       ======================================================= -->
+ <!-- =======================================================
+     CONTENIDO PRINCIPAL
+     ======================================================= -->
   <main class="contenedor-principal">
 
-    <!-- 2. PRIMERA CAJA DE TEXTO -->
+    <!-- 2. PRIMERA CAJA DE TEXTO CON EFECTO MÁQUINA -->
     <section class="caja-contenido">
-      
-      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIT UNO DE LOS MIOS CONTIGO</p>
+      <p class="efecto-maquina" id="textoMaquina">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
     </section>
+
+  </main>
 
 
     <!-- 3. ESPACIO PARA IMAGEN -->
@@ -401,5 +402,30 @@
     });
   });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elementoTexto = document.getElementById("textoMaquina");
+      if (elementoTexto) {
+        const textoOriginal = elementoTexto.textContent.trim();
+        elementoTexto.textContent = ""; // Se vacía al cargar para empezar a escribir
+        let i = 0;
+        const velocidad = 35; // Velocidad en milisegundos por letra
+
+        function escribirTexto() {
+          if (i < textoOriginal.length) {
+            elementoTexto.textContent += textoOriginal.charAt(i);
+            i++;
+            setTimeout(escribirTexto, velocidad);
+          } else {
+            // Quita el cursor parpadeante al terminar
+            elementoTexto.classList.remove("efecto-maquina");
+          }
+        }
+
+        // Retardo inicial antes de empezar a escribir
+        setTimeout(escribirTexto, 600);
+      }
+    });
+  </script>
 </body>
 </html>

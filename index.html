@@ -331,12 +331,12 @@
       const observador = new IntersectionObserver(callbackObservador, opcionesObservador);
       textosAnimados.forEach(texto => observador.observe(texto));
     });
-    document.addEventListener('DOMContentLoaded', () => {
+   document.addEventListener('DOMContentLoaded', () => {
   const btnAbrir = document.getElementById('btnAbrirInvitacion');
   const contenedorBtnAbrir = document.getElementById('contenedorBtnAbrir');
   const pantallaEntrada = document.getElementById('pantallaEntrada');
   const btnConfirmar = document.getElementById('btnConfirmarHeader');
-  const miAudio = document.getElementById('miAudio');
+  // Ya no es necesario declarar miAudio aquí si no se va a usar al abrir, pero lo puedes dejar o quitar.
 
   if (btnAbrir) {
     btnAbrir.addEventListener('click', () => {
@@ -356,18 +356,25 @@
         btnConfirmar.classList.add('revelado');
       }
 
-      // 4. Inicia la música automáticamente
-      if (miAudio) {
-        miAudio.play().catch(err => console.log("Reproducción de audio bloqueada hasta la interacción:", err));
-      }
+      // (Nota: Se eliminó la línea de miAudio.play() para que la música 
+      //  no se active automáticamente al abrir la invitación).
 
-      // 5. Oculta del DOM la pantalla de entrada al finalizar la animación
+      // 4. Oculta del DOM la pantalla de entrada al finalizar la animación
       setTimeout(() => {
         if (pantallaEntrada) pantallaEntrada.style.display = 'none';
         if (contenedorBtnAbrir) contenedorBtnAbrir.style.display = 'none';
       }, 1200);
     });
   }
+});
+// Forzar que la página siempre suba al recargar
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Asegurar el scroll al top al cargar
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
 });
   </script>
   

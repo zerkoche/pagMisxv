@@ -3,454 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Evento</title>
-  <!-- Vinculación con el archivo de estilos externo -->
+  <title>Mis XV Años - Mia Nahomi</title>
+
+  <!-- Enlace a la hoja de estilos externa -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- =======================================================
+       TIPOGRAFÍAS DEL PROYECTO 
+       ======================================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fuentes: Playfair Display, Great Vibes, Alex Brush, Cinzel Decorative y Sacramento -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Aquí agregamos Alex Brush -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/tu-codigo-adobe.css">
 </head>
 <body>
-  <img src="canva/asset/disco2.gif" alt="" class="gif-fondo gif-esquina-superior-derecha">
-<img src="canva/asset/disco2.gif" alt="" class="gif-fondo gif-esquina-inferior-izquierda">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fuentes cargadas: Playfair Display, Great Vibes, Alex Brush y Cinzel Decorative -->
-<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/tu-codigo-adobe.css">
+
   <!-- =======================================================
-       1. ENCABEZADO FIJO
+       1. DECORACIÓN / GIFS DE FONDO
        ======================================================= -->
-<header class="encabezado-fijo">
-  <!-- Contenedor central para Título pequeño y Subtítulo grande -->
-  <div class="bloque-titulos-encabezado">
-    <span class="titulo-pequeno">MIS XV AÑOS</span>
-    <h1 class="subtitulo-grande">MIA NAHOMI</h1>
-  </div>
-  
-  <button class="btn-encabezado">Confirmar asistencia</button>
-</header>
+  <img src="canva/asset/disco2.gif" alt="" class="gif-fondo gif-esquina-superior-derecha">
+  <img src="canva/asset/disco2.gif" alt="" class="gif-fondo gif-esquina-inferior-izquierda">
 
+<body>
 
- <!-- =======================================================
-     CONTENIDO PRINCIPAL
-     ======================================================= -->
-  <main class="contenedor-principal">
+  <!-- =======================================================
+       2. ENCABEZADO FIJO
+       ======================================================= -->
+  <header class="encabezado-fijo">
+    <div class="bloque-titulos-encabezado">
+      <span class="titulo-pequeno">Mis XV Años</span>
+      <h1 class="subtitulo-grande">Nombre de la Festejada</h1>
+    </div>
+    
+    <!-- Botón de confirmar asistencia (Oculto al inicio) -->
+    <button id="btnConfirmarHeader" class="btn-encabezado oculto-inicio" onclick="window.open('ENLACE_DE_CONFIRMACION', '_blank')">
+      Confirmar Asistencia
+    </button>
+  </header>
 
-    <!-- 2. PRIMERA CAJA DE TEXTO CON EFECTO MÁQUINA -->
-    <section class="caja-contenido">
-      <p class="efecto-maquina" id="textoMaquina">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
-    </section>
-
-  </main>
-
-
-    <!-- 3. ESPACIO PARA IMAGEN -->
-    <section class="contenedor-imagen">
-      <img src="" alt="Imagen destacada del evento">
-    </section>
-
-
-   <!-- REPRODUCTOR MINIMALISTA (LÍNEA DE TIEMPO + BOTÓN PLAY) -->
-<!-- REPRODUCTOR CON BOTÓN QUE SE PEGA AL HEADER AL HACER SCROLL -->
-<div class="reproductor-minimalista">
-  <!-- Audio nativo (oculto) -->
-  <audio id="miAudio" preload="metadata" loop>
-    <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
-    Tu navegador no soporta el reproductor de audio.
-  </audio>
-
-  <!-- Línea de tiempo arriba -->
-  <div class="contenedor-progreso" id="contenedorProgreso">
-    <div class="barra-progreso" id="barraProgreso"></div>
-  </div>
-
-  <!-- Contenedor ancla para el botón -->
-  <div class="contenedor-boton-audio" id="anclaBotonAudio">
-    <!-- Botón Play/Pause -->
-    <button id="btnPlayPause" class="btn-play-minimalista" aria-label="Reproducir o Pausar">
-      <svg id="iconoPlay" class="icono-reproductor" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-      <svg id="iconoPause" class="icono-reproductor oculto" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-      </svg>
+  <!-- Botón redondo "Ver Invitación" (Ubicado en la orilla entre el Header y el Body) -->
+  <div id="contenedorBtnAbrir" class="contenedor-btn-redondo-orilla">
+    <button id="btnAbrirInvitacion" class="btn-redondo-abrir" aria-label="Ver Invitación">
+      <span>Ver<br>Invitación</span>
     </button>
   </div>
-</div>
 
-      <!--  <div class="audio-bloque">
-        <label><strong>Audio desde YouTube:</strong></label>
-        <div class="contenedor-video-responsive">
-          <iframe 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            title="Reproductor de YouTube" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+  <!-- =======================================================
+       2. PORTADA DE APERTURA (FOTO PRINCIPAL / CARTA)
+       ======================================================= -->
+  <div id="pantallaEntrada" class="pantalla-portada-carta">
+    <div class="contenedor-foto-portada">
+      <!-- Reemplaza con la ruta de tu fotografía de portada -->
+      <img src="canva/asset/Gemini_Generated_Image_dtb287dtb287dtb2.jpg" alt="Fotografía de Portada" class="foto-portada">
+    </div>
+  </div>
+
+  <!-- =======================================================
+       3. CONTENIDO PRINCIPAL DE LA INVITACIÓN (Lo que ya tenemos)
+       ======================================================= -->
+  <main class="contenedor-principal">
+    <!-- Aquí sigue todo tu contenido actual (Texto máquina, reproductor, cuenta regresiva, etc.) -->
+<!-- =======================================================
+       3. CONTENIDO PRINCIPAL
+       ======================================================= -->
+  <main class="contenedor-principal">
+
+    <!-- A. Primera caja de texto con efecto máquina y reproductor de audio dentro -->
+    <section class="caja-contenido">
+      <p class="efecto-maquina" id="textoMaquina">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
+      
+      <!-- Reproductor de audio minimalista colocado debajo del texto máquina -->
+      <div class="reproductor-minimalista" style="margin-top: 20px;">
+        <audio id="miAudio" preload="metadata" loop>
+          <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
+          Tu navegador no soporta el reproductor de audio.
+        </audio>
+
+        <div class="contenedor-progreso" id="contenedorProgreso">
+          <div class="barra-progreso" id="barraProgreso"></div>
+        </div>
+
+        <div class="contenedor-boton-audio" id="anclaBotonAudio">
+          <button id="btnPlayPause" class="btn-play-minimalista" aria-label="Reproducir o Pausar">
+            <svg id="iconoPlay" class="icono-reproductor" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="iconoPause" class="icono-reproductor oculto" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
         </div>
       </div>
-    </section> -->
+    </section>
 
-
-    <!-- 5. SEGUNDA CAJA DE TEXTO 
-    <section class="caja-contenido">
-   
-      <p>UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
-    </section>-->
-
-
-    <!-- 6. CUENTA REGRESIVA (SE DETIENE EN CERO) -->
+    <!-- B. Cuenta regresiva -->
     <section class="caja-contenido">
       <h2 class="texto-centrado">Tiempo Restante</h2>
       <div class="cuenta-regresiva">
-        
         <div class="unidad-tiempo">
           <span id="dias" class="numero-tiempo">00</span>
           <span class="etiqueta-tiempo">Días</span>
         </div>
-
         <div class="unidad-tiempo">
           <span id="horas" class="numero-tiempo">00</span>
           <span class="etiqueta-tiempo">Horas</span>
         </div>
-
         <div class="unidad-tiempo">
           <span id="minutos" class="numero-tiempo">00</span>
           <span class="etiqueta-tiempo">Minutos</span>
         </div>
-
         <div class="unidad-tiempo">
           <span id="segundos" class="numero-tiempo">00</span>
           <span class="etiqueta-tiempo">Segundos</span>
         </div>
-
       </div>
-
-      <!-- Mensaje que se mostrará cuando el contador llegue a cero -->
       <p id="mensaje-evento" class="texto-centrado" style="margin-top: 15px; font-weight: bold; color: #28a745; display: none;">
         ¡El evento ha comenzado!
       </p>
     </section>
+    <!-- C. Galería de 3 botones (Ceremonia, Recepción, Banquete) -->
+    <section class="galeria-botones-adaptable">
+      <a href="https://www.google.com/maps/place/Capilla+Inmaculada+Concepcion+%22La+Conchita%22,+C.+San+Jos%C3%A9+22,+Acuitlapilco,+56335+Chimalhuac%C3%A1n,+M%C3%A9x./data=!4m2!3m1!1s0x85d1e3b4042827eb:0x6e1dad0fad5365a4!18m1!1e1" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+        <img src="canva/asset/cruz.png" alt="Icono Ceremonia" class="img-boton">
+        <span class="texto-boton">CEREMONIA</span>
+        <h6>16:45 HRS</h6>
+      </a>
 
+      <a href="https://www.google.com/maps/place/Capilla+Inmaculada+Concepcion+%22La+Conchita%22,+C.+San+Jos%C3%A9+22,+Acuitlapilco,+56335+Chimalhuac%C3%A1n,+M%C3%A9x./data=!4m2!3m1!1s0x85d1e3b4042827eb:0x6e1dad0fad5365a4!18m1!1e1" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+        <img src="canva/asset/pin.png" alt="Icono Recepción" class="img-boton">
+        <span class="texto-boton">RECEPCION</span>
+        <h6>18:30 HRS</h6>
+      </a>
 
- <!-- 7. SECCIÓN DE 3 BOTONES (HORIZONTAL EN DESKTOP, VERTICAL AJUSTADO EN MÓVIL) -->
-<section class="galeria-botones-adaptable">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+        <img src="canva/asset/banquete.png" alt="Icono Banquete" class="img-boton">
+        <span class="texto-boton">BANQUETE</span>
+        <h6>19:30 HRS</h6>
+      </a>
+    </section>
 
-  <!-- Botón 1 -->
-  <a href="https://www.google.com/maps/place/Capilla+Inmaculada+Concepcion+%22La+Conchita%22,+C.+San+Jos%C3%A9+22,+Acuitlapilco,+56335+Chimalhuac%C3%A1n,+M%C3%A9x./data=!4m2!3m1!1s0x85d1e3b4042827eb:0x6e1dad0fad5365a4!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI2LjQzLjAYACDXggMqvQEsOTQyNjc3MjcsOTQyOTIxOTUsOTQyOTk1MzIsMTAwNzk2NDk4LDEwMDc5Nzc2MSwxMDA3OTY1MzUsOTQyODA1NzYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNzk2MTksMTAwODI1MDI1LDEwMDgyMDIzNywxMDA4MjI0OTQsMTAwODI3OTc1LDEwMDgzODM1OSwxMjE4MTY0NjFCAk1Y&skid=42b63f58-5fd5-4804-bca7-c5f49b814db7&g_st=aw" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
-    <img src="canva/asset/cruz.png" alt="Icono 1" class="img-boton">
-    <span class="texto-boton">CEREMONIA</span>
-    <H6>16:45 HRS</H6>
-  </a>
+    <!-- D. Sección Dress Code -->
+    <section class="caja-contenido">
+      <h2 class="titulo-seccion-elegante">DRESS CODE</h2>
+      <span class="titulo-pequeno">FORMAL</span>
+    </section>
 
-  <!-- Botón 2 -->
-  <a href="https://www.google.com/maps/place/Capilla+Inmaculada+Concepcion+%22La+Conchita%22,+C.+San+Jos%C3%A9+22,+Acuitlapilco,+56335+Chimalhuac%C3%A1n,+M%C3%A9x./data=!4m2!3m1!1s0x85d1e3b4042827eb:0x6e1dad0fad5365a4!18m1!1e1?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI2LjQzLjAYACDXggMqvQEsOTQyNjc3MjcsOTQyOTIxOTUsOTQyOTk1MzIsMTAwNzk2NDk4LDEwMDc5Nzc2MSwxMDA3OTY1MzUsOTQyODA1NzYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNzk2MTksMTAwODI1MDI1LDEwMDgyMDIzNywxMDA4MjI0OTQsMTAwODI3OTc1LDEwMDgzODM1OSwxMjE4MTY0NjFCAk1Y&skid=42b63f58-5fd5-4804-bca7-c5f49b814db7&g_st=aw" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
-    <img src="canva/asset/pin.png" alt="Icono 2" class="img-boton">
-    <span class="texto-boton">RECEPCION</span>
-    <H6>18:30 HRS</H6>
-  </a>
+    <section class="caja-contenido">
+      <h2>RECOMENDADO</h2>
+      <div class="caja-cuerpo">
+        <div class="caja-imagen">
+          <img src="canva/asset/LIKE.png" alt="Recomendado">
+        </div>
+        <div class="caja-texto">
+          <p>Colores obscuros como negro, gris oscuro, morado oscuro o verde olivo</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Botón 3 -->
-  <a href="" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
-    <img src="canva/asset/banquete.png" alt="Icono 3" class="img-boton">
-    <span class="texto-boton">BANQUETE</span>
-    <H6>19:30 HRS</H6>
-  </a>
+    <section class="caja-contenido">
+      <h2>NO USAR</h2>
+      <div class="caja-cuerpo">
+        <div class="caja-imagen">
+          <img src="canva/asset/UNLIKE.png" alt="No usar">
+        </div>
+        <div class="caja-texto">
+          <p>Colores claros, dorado, azul oscuro, plateado</p>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section class="caja-contenido caja-frase">
+      <p class="texto-frase">
+        “Tonos oscuros para brillar bajo las estrellas”
+      </p>
+      <div class="contenedor-imagen-ritmo" style="margin-top: 15px;">
+        <img src="canva/asset/musica.png" alt="Detalle Musical" class="img-balanceo-musical">
+      </div>
+    </section>
 
+    <!-- E. Sección Mesa de Regalos / Enlace -->
+    <section class="caja-contenido caja-texto-boton">
+      <p class="texto-seccion-bloque">
+        Tu presencia es mi mejor regalo. Pero si no sabes qué obsequiarme y deseas tener un detalle conmigo, ¡ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
+      </p>
+      <div class="contenedor-boton-inferior" style="margin-top: 20px;">
+        <a href="datosbancarios.html" rel="noopener noreferrer" class="tarjeta-boton">
+          <img src="canva/asset/MICROFONO.png" alt="Ir a datos bancarios" class="img-boton">
+          <span class="texto-boton">Da click</span>
+        </a>
+      </div>
+    </section>
 
-    <!-- 8. DOS CAJAS DE TEXTO Y TABLA DE 2x2 -->
-  <h2 class="titulo-seccion-elegante">DRESS CODE</h2>
-  <span class="titulo-pequeno">FORMAL</span>
-  <!-- Caja 1 con Imagen y Texto -->
-<section class="caja-contenido">
-  <h2>RECOMENDADO</h2>
-  <div class="caja-cuerpo">
-    <div class="caja-imagen">
-      <img src="canva/asset/LIKE.png" alt="Detalle Información">
-    </div>
-    <div class="caja-texto">
-      <p>colores obscuros como Negro, gris oscuro , morado oscuro o verde olivo</p>
-    </div>
-  </div>
-</section>
+    <!-- F. Sección Canción / Playlist -->
+    <section class="caja-contenido">
+      <h2 class="titulo-cinzel texto-seccion-bloque">¿Qué canción no puede faltar en la playlist?</h2>
+      <button class="btn-seccion texto-seccion-bloque" style="margin-top: 15px;">Recomendar Canción</button>
+    </section>
 
-<!-- Caja 2 con Imagen y Texto -->
-<section class="caja-contenido">
-  <h2>NO USAR</h2>
-  <div class="caja-cuerpo">
-    <div class="caja-imagen">
-      <img src="canva/asset/UNLIKE.png" alt="Detalle Programa">
-    </div>
-    <div class="caja-texto">
-      <p>colroes claros, dorado, azul oscuro, plateado</p>
-    </div>
-  </div>
-</section>
-<section class="caja-contenido caja-frase">
-  <p class="texto-frase">
-    “Tonos oscuros para brillar bajo las estrellas”
-  </p>
-  <!-- =======================================================
-     SECCIÓN DE IMAGEN CENTRADA CON ANIMACIÓN MUSICAL
-     ======================================================= -->
-<section class="caja-contenido caja-imagen-animada">
-  <div class="contenedor-imagen-ritmo">
-    <img src="canva/asset/musica.png" alt="Detalle Musical" class="img-balanceo-musical">
-  </div>
-</section>
-</section>
-
- <!-- =======================================================
-     SECCIÓN CON TEXTO Y BOTÓN CON IMAGEN DEBAJO
-     ======================================================= -->
-<section class="caja-contenido caja-texto-boton">
-  <!-- =======================================================
-     SECCIÓN DE TEXTO CON ANIMACIÓN DE APARICIÓN
-     ======================================================= -->
-<section class="caja-contenido">
-  <!-- 1. Texto descriptivo superior con animación -->
-  <p class="texto-seccion-bloque">
-    Tu presencia es mi mejor regalo. Pero si no sabes que obsequiarme y deseas tener un detalle conmigo, ¡ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
-  </p> 
-</section>
-<BR></BR>
-  <!-- 2. Botón con imagen debajo -->
-  <div class="contenedor-boton-inferior">
-    <a href="datosbancarios.html" target="" rel="noopener noreferrer" class="tarjeta-boton">
-      <img src="canva/asset/MICROFONO.png" alt="Confirmar Asistencia" class="img-boton">
-  
-      <span class="texto-boton">da click</span>
-    </a>
-  </div>
-</section>
- 
-
-   
-    </a>
-  </div>
-</section>
+    <!-- G. Frase Final -->
+    <section class="caja-contenido">
+      <p class="texto-principal-playfair texto-seccion-bloque">
+        "Espero vengas a brillar conmigo en esta noche especial."
+      </p>
+    </section>
 
   </main>
+
+ 
   <!-- =======================================================
-       SECCIÓN CON TÍTULO CINZEL DECORATIVE Y BOTÓN
-       ======================================================= -->
-  <section class="caja-contenido">
-    <!-- Título con fuente Cinzel Decorative y animación al scroll -->
-    <h2 class="titulo-cinzel texto-seccion-bloque">¿Que cancion no puede falktar en la playlist ?</h2>
-    
-    <p class="texto-descripcion texto-seccion-bloque">
-     
-    </p>
-
-    <!-- Botón de acción centrado -->
-    <button class="btn-seccion texto-seccion-bloque">Recomendar Cancion</button>
-  </section>
-
-  <!-- =======================================================
-       SECCIÓN SOLO TEXTO (PLAYFAIR DISPLAY)
-       ======================================================= -->
-  <section class="caja-contenido">
-    <p class="texto-principal-playfair texto-seccion-bloque">
-      "Espero Vengas a Brillar conmigo. En esta Noche especial."
-    </p>
-  </section>
-
-
-  <!-- =======================================================
-       CÓDIGO JAVASCRIPT DE LA CUENTA REGRESIVA
+       5. SCRIPTS JAVASCRIPT
        ======================================================= -->
   <script>
-    // Fecha objetivo del evento (Año, Mes [0=Enero, 11=Diciembre], Día, Hora, Minutos, Segundos)
-    // Cambia estos valores por la fecha real de tu evento:
-    const fechaEvento = new Date(2027, 4, 15, 17, 1, 1).getTime();
+    document.addEventListener("DOMContentLoaded", function() {
+      // 1. Cuenta Regresiva
+      const fechaEvento = new Date(2027, 4, 15, 17, 1, 1).getTime();
+      const temporizador = setInterval(function() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaEvento - ahora;
 
-    const temporizador = setInterval(function() {
-      const ahora = new Date().getTime();
-      const diferencia = fechaEvento - ahora;
-
-      // Si el tiempo llega a cero o se sobrepasa
-      if (diferencia <= 0) {
-        clearInterval(temporizador); // Detiene el contador por completo
-
-        // Congela los contadores exactamente en cero
-        document.getElementById("dias").innerText = "00";
-        document.getElementById("horas").innerText = "00";
-        document.getElementById("minutos").innerText = "00";
-        document.getElementById("segundos").innerText = "00";
-
-        // Muestra el mensaje de finalización
-        const mensaje = document.getElementById("mensaje-evento");
-        if (mensaje) {
-          mensaje.style.display = "block";
+        if (diferencia <= 0) {
+          clearInterval(temporizador);
+          document.getElementById("dias").innerText = "00";
+          document.getElementById("horas").innerText = "00";
+          document.getElementById("minutos").innerText = "00";
+          document.getElementById("segundos").innerText = "00";
+          const mensaje = document.getElementById("mensaje-evento");
+          if (mensaje) mensaje.style.display = "block";
+          return;
         }
-        return;
-      }
 
-      // Cálculos matemáticos del tiempo restante
-      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-      // Inyecta los números formateados a 2 dígitos
-      document.getElementById("dias").innerText = String(dias).padStart(2, '0');
-      document.getElementById("horas").innerText = String(horas).padStart(2, '0');
-      document.getElementById("minutos").innerText = String(minutos).padStart(2, '0');
-      document.getElementById("segundos").innerText = String(segundos).padStart(2, '0');
-    }, 1000);
-  </script>
-   <script>
- setInterval(actualizarContador, 1000);
-    actualizarContador();
+        document.getElementById("dias").innerText = String(dias).padStart(2, '0');
+        document.getElementById("horas").innerText = String(horas).padStart(2, '0');
+        document.getElementById("minutos").innerText = String(minutos).padStart(2, '0');
+        document.getElementById("segundos").innerText = String(segundos).padStart(2, '0');
+      }, 1000);
 
-    // 2. REPRODUCTOR DE MÚSICA CORREGIDO
-    const audio = document.getElementById("miAudio");
-    const btnPlayPause = document.getElementById("btnPlayPause");
-    const iconoPlay = document.getElementById("iconoPlay");
-    const iconoPause = document.getElementById("iconoPause");
-    const barraProgreso = document.getElementById("barraProgreso");
-    const contenedorProgreso = document.getElementById("contenedorProgreso");
-    const anclaBotonAudio = document.getElementById("anclaBotonAudio");
+      // 2. Reproductor de Música
+      const audio = document.getElementById("miAudio");
+      const btnPlayPause = document.getElementById("btnPlayPause");
+      const iconoPlay = document.getElementById("iconoPlay");
+      const iconoPause = document.getElementById("iconoPause");
+      const barraProgreso = document.getElementById("barraProgreso");
+      const contenedorProgreso = document.getElementById("contenedorProgreso");
+      const anclaBotonAudio = document.getElementById("anclaBotonAudio");
 
-    // Forzar carga limpia del archivo de audio
-    audio.load();
+      audio.load();
 
-    // Función principal para alternar Play/Pause
-    function alternarReproduccion(e) {
-      if (e) e.stopPropagation(); // Evita interferencias de eventos globales
-
-      if (audio.paused) {
-        const promesaPlay = audio.play();
-        if (promesaPlay !== undefined) {
-          promesaPlay.then(() => {
+      btnPlayPause.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (audio.paused) {
+          audio.play().then(() => {
             iconoPlay.classList.add("oculto");
             iconoPause.classList.remove("oculto");
-          }).catch(error => {
-            console.error("El navegador bloqueó la reproducción:", error);
-          });
-        }
-      } else {
-        audio.pause();
-        iconoPlay.classList.remove("oculto");
-        iconoPause.classList.add("oculto");
-      }
-    }
-
-    // Escuchar el clic en el botón
-    btnPlayPause.addEventListener("click", alternarReproduccion);
-
-    // Actualización de la barra de progreso
-    audio.addEventListener("timeupdate", () => {
-      if (audio.duration && !isNaN(audio.duration)) {
-        const porcentaje = (audio.currentTime / audio.duration) * 100;
-        barraProgreso.style.width = porcentaje + "%";
-      }
-    });
-
-    // Control de la barra de tiempo
-    contenedorProgreso.addEventListener("click", (e) => {
-      const rect = contenedorProgreso.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      if (audio.duration && !isNaN(audio.duration)) {
-        audio.currentTime = (clickX / rect.width) * audio.duration;
-      }
-    });
-
-    // Resetear al finalizar (si no está en loop)
-    audio.addEventListener("ended", () => {
-      iconoPlay.classList.remove("oculto");
-      iconoPause.classList.add("oculto");
-      barraProgreso.style.width = "0%";
-    });
-
-    // 3. LÓGICA STICKY EN EL HEADER
-    window.addEventListener("scroll", () => {
-      if (anclaBotonAudio) {
-        const posicionAncla = anclaBotonAudio.getBoundingClientRect().top;
-        if (posicionAncla < 70) {
-          btnPlayPause.classList.add("fijo-en-header");
+          }).catch(err => console.log("Reproducción bloqueada:", err));
         } else {
-          btnPlayPause.classList.remove("fijo-en-header");
+          audio.pause();
+          iconoPlay.classList.remove("oculto");
+          iconoPause.classList.add("oculto");
         }
-      }
-    });
+      });
 
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("miAudio");
-    const btnPlayPause = document.getElementById("btnPlayPause");
-    const iconoPlay = document.getElementById("iconoPlay");
-    const iconoPause = document.getElementById("iconoPause");
-    const barraProgreso = document.getElementById("barraProgreso");
-    const contenedorProgreso = document.getElementById("contenedorProgreso");
-    const anclaBotonAudio = document.getElementById("anclaBotonAudio");
+      audio.addEventListener("timeupdate", () => {
+        if (audio.duration && !isNaN(audio.duration)) {
+          const porcentaje = (audio.currentTime / audio.duration) * 100;
+          barraProgreso.style.width = porcentaje + "%";
+        }
+      });
 
-    // 1. Funcionalidad de Play / Pause
-    btnPlayPause.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play().then(() => {
-          iconoPlay.classList.add("oculto");
-          iconoPause.classList.remove("oculto");
-        }).catch(err => console.log("Se requiere interacción directa"));
-      } else {
-        audio.pause();
-        iconoPlay.classList.remove("oculto");
-        iconoPause.classList.add("oculto");
-      }
-    });
+      contenedorProgreso.addEventListener("click", (e) => {
+        const rect = contenedorProgreso.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        if (audio.duration && !isNaN(audio.duration)) {
+          audio.currentTime = (clickX / rect.width) * audio.duration;
+        }
+      });
 
-    // 2. Avance de la barra de progreso
-    audio.addEventListener("timeupdate", () => {
-      if (audio.duration) {
-        const porcentaje = (audio.currentTime / audio.duration) * 100;
-        barraProgreso.style.width = porcentaje + "%";
-      }
-    });
+      window.addEventListener("scroll", () => {
+        if (anclaBotonAudio) {
+          const posicionAncla = anclaBotonAudio.getBoundingClientRect().top;
+          if (posicionAncla < 70) {
+            btnPlayPause.classList.add("fijo-en-header");
+          } else {
+            btnPlayPause.classList.remove("fijo-en-header");
+          }
+        }
+      });
 
-    // 3. Salto en la línea de tiempo al hacer clic
-    contenedorProgreso.addEventListener("click", (e) => {
-      const rect = contenedorProgreso.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      if (audio.duration) {
-        audio.currentTime = (clickX / rect.width) * audio.duration;
-      }
-    });
-
-    // 4. LÓGICA STICKY EN EL HEADER AL HACER SCROLL
-    window.addEventListener("scroll", () => {
-      // Obtiene la posición del contenedor ancla con respecto a la pantalla
-      const posicionAncla = anclaBotonAudio.getBoundingClientRect().top;
-      
-      // Si el contenedor ancla sube y pasa la altura del header (aprox 80px), fija el botón
-      if (posicionAncla < 70) {
-        btnPlayPause.classList.add("fijo-en-header");
-      } else {
-        btnPlayPause.classList.remove("fijo-en-header");
-      }
-    });
-  });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+      // 3. Efecto Máquina de Escribir
       const elementoTexto = document.getElementById("textoMaquina");
       if (elementoTexto) {
         const textoOriginal = elementoTexto.textContent.trim();
-        elementoTexto.textContent = ""; // Se vacía al cargar para empezar a escribir
+        elementoTexto.textContent = "";
         let i = 0;
-        const velocidad = 35; // Velocidad en milisegundos por letra
+        const velocidad = 35;
 
         function escribirTexto() {
           if (i < textoOriginal.length) {
@@ -458,45 +308,68 @@
             i++;
             setTimeout(escribirTexto, velocidad);
           } else {
-            // Quita el cursor parpadeante al terminar
             elementoTexto.classList.remove("efecto-maquina");
           }
         }
-
-        // Retardo inicial antes de empezar a escribir
         setTimeout(escribirTexto, 600);
       }
+
+      // 4. IntersectionObserver para Animación Scroll (Fade-in / Slide-up)
+      const textosAnimados = document.querySelectorAll('.texto-seccion-bloque');
+      const opcionesObservador = { root: null, threshold: 0.2 };
+
+      const callbackObservador = (entradas) => {
+        entradas.forEach(entrada => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+          } else {
+            entrada.target.classList.remove('visible');
+          }
+        });
+      };
+
+      const observador = new IntersectionObserver(callbackObservador, opcionesObservador);
+      textosAnimados.forEach(texto => observador.observe(texto));
     });
+    document.addEventListener('DOMContentLoaded', () => {
+  const btnAbrir = document.getElementById('btnAbrirInvitacion');
+  const contenedorBtnAbrir = document.getElementById('contenedorBtnAbrir');
+  const pantallaEntrada = document.getElementById('pantallaEntrada');
+  const btnConfirmar = document.getElementById('btnConfirmarHeader');
+  const miAudio = document.getElementById('miAudio');
+
+  if (btnAbrir) {
+    btnAbrir.addEventListener('click', () => {
+      // 1. Hace desaparecer el botón redondo "Ver Invitación"
+      if (contenedorBtnAbrir) {
+        contenedorBtnAbrir.classList.add('desaparecer');
+      }
+
+      // 2. Desliza la portada con la fotografía hacia abajo
+      if (pantallaEntrada) {
+        pantallaEntrada.classList.add('deslizar-abajo');
+      }
+
+      // 3. Muestra el botón de confirmación en el Header
+      if (btnConfirmar) {
+        btnConfirmar.classList.remove('oculto-inicio');
+        btnConfirmar.classList.add('revelado');
+      }
+
+      // 4. Inicia la música automáticamente
+      if (miAudio) {
+        miAudio.play().catch(err => console.log("Reproducción de audio bloqueada hasta la interacción:", err));
+      }
+
+      // 5. Oculta del DOM la pantalla de entrada al finalizar la animación
+      setTimeout(() => {
+        if (pantallaEntrada) pantallaEntrada.style.display = 'none';
+        if (contenedorBtnAbrir) contenedorBtnAbrir.style.display = 'none';
+      }, 1200);
+    });
+  }
+});
   </script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionamos todos los textos que queramos animar al hacer scroll
-    const textosAnimados = document.querySelectorAll('.texto-seccion-bloque');
-
-    const opcionesObservador = {
-      root: null, // Usa la ventana del navegador como referencia
-      threshold: 0.2 // Se activa cuando al menos el 20% del texto es visible en pantalla
-    };
-
-    const callbackObservador = (entradas, observador) => {
-      entradas.forEach(entrada => {
-        if (entrada.isIntersecting) {
-          // El texto entra en pantalla: agregamos la clase para que suba y aparezca
-          entrada.target.classList.add('visible');
-        } else {
-          // El texto sale de la pantalla: quitamos la clase para que se reinicie al volver
-          entrada.target.classList.remove('visible');
-        }
-      });
-    };
-
-    const observador = new IntersectionObserver(callbackObservador, opcionesObservador);
-
-    // Ponemos a vigilar cada párrafo con esa clase
-    textosAnimados.forEach(texto => {
-      observador.observe(texto);
-    });
-  });
-</script>
+  
 </body>
 </html>

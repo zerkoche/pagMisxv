@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis XV Años - Mia Nahomi</title>
 
-  <!-- Enlace a la hoja de estilos externa -->
+ 
   <link rel="stylesheet" href="styles.css">
 
   <!-- =======================================================
@@ -32,19 +32,19 @@
   <header class="encabezado-fijo">
     <div class="bloque-titulos-encabezado">
       <span class="titulo-pequeno">Mis XV Años</span>
-      <h1 class="subtitulo-grande">Nombre de la Festejada</h1>
+      <h1 class="subtitulo-grande">Mia Nahomi</h1>
     </div>
     
-    <!-- Botón de confirmar asistencia (Oculto al inicio) -->
+    <!-- Botón de confirmar asistencia -->
     <button id="btnConfirmarHeader" class="btn-encabezado oculto-inicio" onclick="window.open('ENLACE_DE_CONFIRMACION', '_blank')">
       Confirmar Asistencia
     </button>
   </header>
 
-  <!-- Botón redondo "Ver Invitación" (Ubicado en la orilla entre el Header y el Body) -->
+  <!-- Botón redondo "Ver Invitación"  -->
   <div id="contenedorBtnAbrir" class="contenedor-btn-redondo-orilla">
     <button id="btnAbrirInvitacion" class="btn-redondo-abrir" aria-label="Ver Invitación">
-      <span>Ver<br>Invitación</span>
+      <span>Abrir</span>
     </button>
   </div>
 
@@ -53,16 +53,16 @@
        ======================================================= -->
   <div id="pantallaEntrada" class="pantalla-portada-carta">
     <div class="contenedor-foto-portada">
-      <!-- Reemplaza con la ruta de tu fotografía de portada -->
-      <img src="canva/asset/Gemini_Generated_Image_dtb287dtb287dtb2.jpg" alt="Fotografía de Portada" class="foto-portada">
+      <!-- fotografía de portada -->
+    
+       <section> <img  id="fotoportada" src="canva/asset/perfil.png" alt=""></section>
     </div>
   </div>
 
   <!-- =======================================================
-       3. CONTENIDO PRINCIPAL DE LA INVITACIÓN (Lo que ya tenemos)
+       3. CONTENIDO PRINCIPAL DE LA INVITACIÓN
        ======================================================= -->
   <main class="contenedor-principal">
-    <!-- Aquí sigue todo tu contenido actual (Texto máquina, reproductor, cuenta regresiva, etc.) -->
 <!-- =======================================================
        3. CONTENIDO PRINCIPAL
        ======================================================= -->
@@ -72,7 +72,7 @@
     <section class="caja-contenido">
       <p class="efecto-maquina" id="textoMaquina">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
       
-      <!-- Reproductor de audio minimalista colocado debajo del texto máquina -->
+      <!-- Reproductor de audio minimalista  -->
       <div class="reproductor-minimalista" style="margin-top: 20px;">
         <audio id="miAudio" preload="metadata" loop>
           <source src="canva/asset/Cyndi Lauper - Time After Time (Audio).mp3" type="audio/mpeg">
@@ -135,7 +135,7 @@
         <h6>18:30 HRS</h6>
       </a>
 
-      <a href="#" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
+      <a  rel="noopener noreferrer" class="tarjeta-boton">
         <img src="canva/asset/banquete.png" alt="Icono Banquete" class="img-boton">
         <span class="texto-boton">BANQUETE</span>
         <h6>19:30 HRS</h6>
@@ -295,24 +295,24 @@
       });
 
       // 3. Efecto Máquina de Escribir
-      const elementoTexto = document.getElementById("textoMaquina");
-      if (elementoTexto) {
-        const textoOriginal = elementoTexto.textContent.trim();
-        elementoTexto.textContent = "";
-        let i = 0;
-        const velocidad = 35;
+      //const elementoTexto = document.getElementById("textoMaquina");
+     // if (elementoTexto) {
+       // const textoOriginal = elementoTexto.textContent.trim();
+      //  elementoTexto.textContent = "";
+      //  let i = 0;
+      //  const velocidad = 35;
 
-        function escribirTexto() {
-          if (i < textoOriginal.length) {
-            elementoTexto.textContent += textoOriginal.charAt(i);
-            i++;
-            setTimeout(escribirTexto, velocidad);
-          } else {
-            elementoTexto.classList.remove("efecto-maquina");
-          }
-        }
-        setTimeout(escribirTexto, 600);
-      }
+       // function escribirTexto() {
+       //   if (i < textoOriginal.length) {
+         //   elementoTexto.textContent += textoOriginal.charAt(i);
+          //  i++;
+          //  setTimeout(escribirTexto, velocidad);
+         // } else {
+         //   elementoTexto.classList.remove("efecto-maquina");
+         // }
+      //  }
+      //  setTimeout(escribirTexto, 600);
+    //  }
 
       // 4. IntersectionObserver para Animación Scroll (Fade-in / Slide-up)
       const textosAnimados = document.querySelectorAll('.texto-seccion-bloque');

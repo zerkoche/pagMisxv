@@ -226,7 +226,8 @@ body {
    6. TIPOGRAFÍAS UNIFICADAS (ESCRITORIO Y MÓVIL)
    ======================================================= */
 .efecto-maquina::after {
-  content: '|';
+  
+    font-family: 'Playfair Display', serif;
   display: inline-block;
   margin-left: 2px;
   animation: parpadeoCursor 0.7s infinite;
@@ -238,7 +239,7 @@ body {
   50% { opacity: 0; }
 }
 
-/* Tipografía elegante unificada para textos principales y bloques */
+/*Tipografía elegante unificada para textos principales y bloques */
 .efecto-maquina,
 .texto-seccion-bloque,
 .caja-texto-boton .texto-seccion-bloque {
@@ -248,7 +249,7 @@ body {
   line-height: 1.8;
   color: #2d3748;
   text-align: center;
-}
+}*/
 
 .texto-seccion-bloque,
 .caja-texto-boton .texto-seccion-bloque {
@@ -891,7 +892,10 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
 }
-
+.fotoportada{
+  align-self: center;
+  text-size-adjust: 245px, 245px;
+}
 .contenedor-foto-portada {
   width: 100%;
   height: 100%;
@@ -929,5 +933,82 @@ body {
   .pantalla-portada-carta {
     top: 27vh;
     height: calc(100vh - 27vh);
+  }
+}
+
+
+
+/* =======================================================
+   ESTILOS PARA TU ESTRUCTURA DE PORTADA Y FOTO
+   ======================================================= */
+.pantalla-portada-carta {
+  position: fixed;
+  top: 95px; /* Debajo del header en escritorio */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 95px);
+  background-color: #ffffff !important; /* Fondo blanco sólido */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+}
+
+.contenedor-foto-portada {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilo para la etiqueta section que envuelve tu imagen */
+.contenedor-foto-portada section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 260px; /* Ancho ideal en escritorio */
+  height: 340px; /* Altura tipo retrato vertical */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border: 4px solid #ffffff;
+  outline: 1px solid #e2e8f0;
+  background-color: #f7f9fa;
+}
+
+/* Tu imagen con el ID fotoportada */
+#fotoportada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Animación de apertura (deslizar hacia abajo) */
+.pantalla-portada-carta.deslizar-abajo {
+  transform: translateY(100vh);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =======================================================
+   ADAPTACIÓN RESPONSIVE PARA MÓVILES
+   ======================================================= */
+@media (max-width: 600px) {
+  .pantalla-portada-carta {
+    top: 27vh; /* Coincide con la altura del header en celular */
+    height: calc(100vh - 27vh);
+  }
+
+  .contenedor-foto-portada section {
+    max-width: 210px; /* Tamaño adaptado para pantallas de celulares */
+    height: 270px;
   }
 }

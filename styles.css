@@ -1,5 +1,6 @@
-/* 1. IMPORTACIÓN DE FUENTES 
-   ======================================================= */
+/* 1. FUENTES  */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap');
+
 @font-face {
   font-family: 'Brittany Signature';
   src: url('fuentes/brittany-signature.ttf') format('truetype');
@@ -15,7 +16,7 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Playfair Display', system-ui, -apple-system, sans-serif;
   background-image: url('canva/asset/Gemini_Generated_Image_dtb287dtb287dtb2.jpg');
   background-size: cover;
   background-position: center;
@@ -30,9 +31,7 @@ body {
   text-align: center;
 }
 
-/* =======================================================
-   2. DECORACIÓN / GIFS DE FONDO
-   ======================================================= */
+/*  2. DECORACIÓN / GIFS DE FONDO */
 .gif-fondo {
   position: fixed;
   z-index: -1;
@@ -56,21 +55,17 @@ body {
   height: auto;
 }
 
-/* =======================================================
-   3. ENCABEZADO FIJO (ESCRITORIO)
-   ======================================================= */
+/*  3. ENCABEZADO (AHORA NO ESTÁTICO FIJO) */
 .encabezado-fijo {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  min-height: 95px; /* Ligeramente más alto para dar espacio al botón abajo */
+  min-height: 95px;
   background-color: #f2f2f2;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 10px 20px;
+  padding: 15px 20px;
   display: flex;
-  flex-direction: column; /* Apila los elementos en vertical */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -81,81 +76,80 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px; /* Espacio pequeño entre el texto y el botón */
+  margin-bottom: 6px;
 }
 
 .titulo-pequeno {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #718096;
-  margin-bottom: 1px;
+  letter-spacing: 2.5px;
+  color: #4a5568;
+  margin-bottom: 2px;
   text-align: center;
 }
 
+/* TÍTULO PRINCIPAL MÁS GRANDE Y EN NEGRITA */
 .subtitulo-grande {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 2.4rem; /* Ligeramente más proporcionado para escritorio */
-  font-weight: normal;
-  color: #1c2639;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a202c;
   line-height: 1.1;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-/* Botón compacto para el encabezado (debajo del título) */
 .encabezado-fijo .btn-encabezado {
   background: linear-gradient(135deg, #f7f9fa 0%, #e2e8f0 50%, #cbd5e0 100%);
   color: #1a202c;
   border: 1px solid #a0aec0;
-  padding: 5px 16px; /* Más pequeño y compacto */
+  padding: 6px 18px;
   font-family: 'Playfair Display', serif;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  font-weight: bold;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-top: 2px;
+  transition: all 0.35s ease;
+  margin-top: 4px;
 }
-/* =======================================================
-   4. BOTONES Y ESTILOS PLATEADOS
-   ======================================================= */
-/* Botón principal (Confirmar Asistencia - tamaño adaptado y elegante) */
+
+/* 4. BOTONES Y ESTILOS PLATEADOS */
 .btn-encabezado {
   background: linear-gradient(135deg, #f7f9fa 0%, #e2e8f0 50%, #cbd5e0 100%);
   color: #1a202c;
   border: 1px solid #a0aec0;
-  padding: 10px 24px; /* Ajustado para escritorio para que no luzca gigante */
+  padding: 10px 24px;
   font-family: 'Playfair Display', serif;
   font-size: 0.8rem;
+  font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 6px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Botón de sección (Recomendar canción) compacto y suave */
 .btn-seccion {
   background: linear-gradient(135deg, #fbfcfd 0%, #edf2f7 60%, #e2e8f0 100%);
   color: #2d3748;
   border: 1px solid #cbd5e0;
-  padding: 6px 16px; 
+  padding: 8px 18px; 
   font-family: 'Playfair Display', serif;
-  font-size: 0.72rem; 
+  font-size: 0.78rem; 
+  font-weight: bold;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.35s ease;
 }
 
 .btn-encabezado:hover, 
@@ -167,17 +161,9 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.btn-encabezado:active, 
-.btn-seccion:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
-}
-
-/* =======================================================
-   5. CONTENEDOR PRINCIPAL Y CAJAS DE CONTENIDO
-   ======================================================= */
+/*  5. CONTENEDOR PRINCIPAL Y CAJAS DE CONTENIDO */
 .contenedor-principal {
-  margin-top: 95px;
+  margin-top: 0;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -191,20 +177,23 @@ body {
   justify-content: center;
   text-align: center;
   margin: 45px auto;
-  padding: 25px 20px;
+  padding: 30px 20px;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.735);
-  border: 1px solid rgba(226, 232, 240, 0.6);
-  border-radius: 8px;
-  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-.caja-contenido h2 {
+.caja-contenido h2, 
+.caja-contenido h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 0.76rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   font-style: italic;
-  line-height: 1.8;
-  color: #436195;
+  line-height: 1.6;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
 .caja-texto-boton {
@@ -213,43 +202,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; /* Asegura que el botón quede ordenado debajo del texto */
+  gap: 15px;
 }
 
 .caja-frase {
   text-align: center;
   padding: 30px 25px;
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
-/* =======================================================
-   6. TIPOGRAFÍAS UNIFICADAS (ESCRITORIO Y MÓVIL)
-   ======================================================= */
-.efecto-maquina::after {
-  
-    font-family: 'Playfair Display', serif;
-  display: inline-block;
-  margin-left: 2px;
-  animation: parpadeoCursor 0.7s infinite;
-  color: #718096;
-}
-
-@keyframes parpadeoCursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/*Tipografía elegante unificada para textos principales y bloques */
+/* 6. TIPOGRAFÍAS Y TEXTOS LARGOS MÁS PEQUEÑOS  */
 .efecto-maquina,
 .texto-seccion-bloque,
 .caja-texto-boton .texto-seccion-bloque {
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
+  font-size: 1.02rem; 
+  font-weight: 500;   
   font-style: italic;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #2d3748;
   text-align: center;
-}*/
+}
 
 .texto-seccion-bloque,
 .caja-texto-boton .texto-seccion-bloque {
@@ -265,74 +238,86 @@ body {
   transform: translateY(0);
 }
 
-.caja-texto-boton .texto-seccion-bloque {
-  margin-bottom: 5px;
-}
-
 .titulo-cinzel {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: 3px;
-  color: #2d3748;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: #1a202c;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
 
 .texto-descripcion {
   font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
-  letter-spacing: 1.5px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
   color: #4a5568;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .texto-principal-playfair {
   font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  font-weight: 700;
   font-style: italic;
-  line-height: 1.8;
-  color: #436195;
+  line-height: 1.7;
+  color: #3b5998;
 }
 
 .texto-frase {
   font-family: 'Playfair Display', serif;
+  font-weight: 600;
   font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #2d3748;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #1a202c;
   margin: 0;
-  letter-spacing: 0.3px;
 }
 
+/* SECCIÓN DRESS CODE (TÍTULO Y SUBTÍTULO REAJUSTADOS) */
 .titulo-seccion-elegante {
   font-family: 'Great Vibes', cursive, serif;
-  font-size: 2.5rem;
+  font-size: 2.3rem; /* Más pequeño y fino */
   font-weight: normal;
   color: #1a202c;
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 8px;
+  margin-top: 5px;
   letter-spacing: 1px;
 }
 
-/* =======================================================
-   7. IMÁGENES Y CONTENEDORES VISUALES
-   ======================================================= */
-.contenedor-imagen {
-  width: 100%;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  overflow: hidden;
+.texto-dress-code-formal {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem; /* Más grande y llamativo */
+  font-weight: 800;   /* Negrita marcada */
+  letter-spacing: 4px;
+  color: #2c3e50;
+  display: block;
+  margin-top: 4px;
 }
 
+/*  7. IMÁGENES Y CONTENEDORES VISUALES */
 .contenedor-imagen img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
+  border-radius: 8px;
+}
+.btn-play-minimalista.fijo-en-header {
+  position: fixed;
+  top: 25px; /* Distancia fija desde la parte superior de la pantalla al hacer scroll */
+  right: 25px; /* Distancia fija desde la esquina derecha */
+  z-index: 10001; /* Asegura que flote por encima de todo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: flotarBoton 0.3s ease-out;
 }
 
+@keyframes flotarBoton {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
 .caja-imagen {
   flex: 0 0 35%;
   max-width: 35%;
@@ -353,23 +338,9 @@ body {
   border-radius: 6px;
 }
 
-.caja-imagen-animada {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 15px;
-}
-
-.contenedor-imagen-ritmo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .img-balanceo-musical {
   width: 100%;
-  max-width: 280px;
+  max-width: 170px; 
   height: auto;
   display: block;
   border-radius: 8px;
@@ -386,42 +357,7 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-/* =======================================================
-   8. REPRODUCTOR DE AUDIO Y MINIMALISTA
-   ======================================================= */
-.seccion-audio {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.audio-bloque {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.reproductor-audio {
-  width: 100%;
-}
-
-.contenedor-video-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.contenedor-video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
+/* 8. REPRODUCTOR DE AUDIO */
 .reproductor-minimalista {
   display: flex;
   flex-direction: column;
@@ -446,17 +382,9 @@ body {
 .barra-progreso {
   width: 0%;
   height: 100%;
-  background-color: #007bff;
+  background-color: #4a5568;
   border-radius: 2px;
   transition: width 0.1s linear;
-}
-
-.contenedor-boton-audio {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-play-minimalista {
@@ -489,32 +417,15 @@ body {
   display: none !important;
 }
 
-.btn-play-minimalista.fijo-en-header {
-  position: fixed;
-  top: calc(27vh - 24px);
-  right: 25px;
-  z-index: 1001;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  animation: flotarBoton 0.3s ease-out;
-}
-
-@keyframes flotarBoton {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* =======================================================
-   9. CUENTA REGRESIVA
-   ======================================================= */
+/* 9. CUENTA REGRESIVA */
 .cuenta-regresiva {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  flex-wrap: nowrap !important;
   gap: 10px;
   border-radius: 60px;
-  background-color: rgba(255, 255, 255, 0.735);
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(226, 232, 240, 0.8);
   max-width: 480px;
   width: 100%;
@@ -526,28 +437,25 @@ body {
   flex-direction: column;
   align-items: center;
   flex: 1;
-  min-width: 0;
 }
 
 .numero-tiempo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #436195;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2c3e50;
   line-height: 1;
 }
 
 .etiqueta-tiempo {
-  font-size: 0.68rem;
-  color: #718096;
+  font-size: 0.72rem;
+  color: #4a5568;
   text-transform: uppercase;
-  margin-top: 3px;
-  font-weight: 600;
+  margin-top: 4px;
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-/* =======================================================
-   10. GALERÍA DE BOTONES Y ACCESOS
-   ======================================================= */
+/*  10. GALERÍA DE BOTONES */
 .galeria-botones-adaptable {
   display: flex;
   flex-direction: row;
@@ -555,10 +463,6 @@ body {
   align-items: flex-start;
   gap: 20px;
   margin-bottom: 25px;
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
 }
 
 .tarjeta-boton {
@@ -583,245 +487,64 @@ body {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+
 .texto-boton {
   margin-top: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #1a202c;
   text-align: center;
-  line-height: 1.2;
 }
 
-.tarjeta-boton:hover .img-boton {
-  transform: scale(1.04);
-  opacity: 0.9;
+.tarjeta-boton h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-top: 2px;
 }
-
-.contenedor-boton-inferior {
+/* =======================================================
+   ESTILO PARA CONTENEDOR DE DOS BOTONES LADO A LADO
+   ======================================================= */
+.contenedor-dos-botones {
   display: flex;
+  flex-direction: row; /* Fuerza siempre la posición horizontal */
   justify-content: center;
   align-items: center;
+  gap: 20px; /* Espacio separador entre ambos botones */
   width: 100%;
-  margin: 0 auto;
+  max-width: 450px;
+  margin: 20px auto 0 auto;
 }
 
-.contenedor-boton-inferior .tarjeta-boton {
-  flex: none;
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto;
+.contenedor-dos-botones .tarjeta-boton {
+  flex: 1;
+  max-width: 150px; /* Tamaño equilibrado para computadoras */
 }
 
-/* =======================================================
-   11. TABLAS Y OTROS ELEMENTOS
-   ======================================================= */
-.contenedor-tabla {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.tabla-personalizada {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.tabla-personalizada th, 
-.tabla-personalizada td {
-  border: 1px solid rgba(203, 213, 225, 0.7);
-  padding: 10px;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.tabla-personalizada th {
-  background-color: rgba(241, 245, 249, 0.8);
-  font-weight: bold;
-}
-
-.contenedor-titulo-seccion {
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 20px;
-}
-
-.contenedor-titulo-seccion .titulo-pequeno {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #718096;
-  margin-bottom: 4px;
-  text-align: center;
-}
-
-/* =======================================================
-   12. MEDIA QUERIES (ADAPTABILIDAD A MÓVILES)
-   ======================================================= */
+/* Adaptación para pantallas de celular (manteniéndolos lado a lado) */
 @media (max-width: 600px) {
-  .encabezado-fijo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    height: 27vh; 
-    padding: 15px 10px;
-  }
-
-  .bloque-titulos-encabezado {
-    grid-column: auto;
-  }
-
-  .titulo-pequeno {
-    font-size: 0.65rem;
-    letter-spacing: 1.5px;
-  }
-
-  .subtitulo-grande {
-    font-size: 2.2rem;
-  }
-
-  .btn-encabezado {
-    padding: 8px 18px;
-    font-size: 0.75rem;
-    width: auto;
-  }
-
-  .btn-seccion {
-    padding: 5px 12px;
-    font-size: 0.65rem;
-  }
-
-  .contenedor-principal {
-    margin-top: calc(27vh + 15px);
-    padding: 0 10px;
-  }
-
-  .caja-contenido {
-    padding: 15px;
-    text-align: center;
-    color: #355563;
-  }
-
-  .cuenta-regresiva {
-    padding: 10px 8px;
-    border-radius: 35px;
-    max-width: 100%;
-    gap: 4px;
-  }
-
-  .unidad-tiempo {
-    min-width: 0;
-  }
-
-  .numero-tiempo {
-    font-size: 1.15rem;
-  }
-
-  .etiqueta-tiempo {
-    font-size: 0.55rem;
-  }
-
-  .efecto-maquina,
-  .texto-seccion-bloque,
-  .caja-texto-boton .texto-seccion-bloque {
-    font-size: 1.05rem;
-    margin-bottom: 12px;
-  }
-
-  .contenedor-boton-inferior .tarjeta-boton {
-    max-width: 170px;
-  }
-
-  .titulo-cinzel {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+  .contenedor-dos-botones {
+    gap: 12px; /* Espacio un poco más compacto para celulares */
   }
   
-  .texto-principal-playfair {
-    font-size: 1rem;
+  .contenedor-dos-botones .tarjeta-boton {
+    max-width: 44%; /* Asegura que cada botón ocupe casi la mitad de la pantalla y no se salgan */
   }
 
-  .texto-frase {
-    font-size: 1.05rem;
+  .contenedor-dos-botones .img-boton {
+    max-height: 100px; /* Ajusta la altura de las imágenes para que luzcan proporcionadas en móvil */
   }
-
-  .img-balanceo-musical {
-    max-width: 200px;
-  }
-
-  .titulo-seccion-elegante {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-
-  .galeria-botones-adaptable {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: calc(73vh - 20px);
-    gap: 8px;
-  }
-
-  .tarjeta-boton {
-    max-width: 100%;
-    max-height: 22vh;
-  }
-
-  .img-boton {
-    max-height: 11vh;
-    max-width: 55vw;
-  }
-
-  .texto-boton {
-    font-family: 'Sacramento', cursive;
-    font-size: 0.8rem;
-    margin-top: 4px;
-  }
-
-  .caja-imagen {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .caja-imagen img {
-    max-height: 180px;
-    width: auto;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .gif-esquina-superior-derecha {
-    width: 380px;
-    right: -170px;
-    transform: translateY(-15%);
-  }
-
-  .gif-esquina-inferior-izquierda {
-    width: 360px;
-    bottom: -70px;
-    left: -160px;
-  }
-
-  .btn-play-minimalista.fijo-en-header {
-    top: calc(27vh - 21px);
-    right: 15px;
-    width: 42px;
-    height: 42px;
+  
+  .contenedor-dos-botones .texto-boton {
+    font-size: 0.9rem; /* Texto del botón ligeramente adaptado al móvil */
   }
 }
-/* =======================================================
-   ESTADOS DE BOTÓN DE CONFIRMACIÓN EN EL HEADER
-   ======================================================= */
+/*  11. INTERACTIVIDAD PORTADA Y HEADER */
 .btn-encabezado.oculto-inicio {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .btn-encabezado.revelado {
@@ -830,12 +553,9 @@ body {
   transform: translateY(0);
 }
 
-/* =======================================================
-   BOTÓN REDONDO EN LA ORILLA (ENTRE HEADER Y BODY)
-   ======================================================= */
 .contenedor-btn-redondo-orilla {
-  position: fixed;
-  top: calc(95px - 35px); /* Anclado en la orilla del header en escritorio */
+  position: absolute;
+  top: calc(95px - 35px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
@@ -843,15 +563,15 @@ body {
 }
 
 .btn-redondo-abrir {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffffff 0%, #edf2f7 50%, #cbd5e0 100%);
   border: 2px solid #a0aec0;
   color: #1a202c;
   font-family: 'Playfair Display', serif;
-  font-size: 0.65rem;
-  font-weight: bold;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
@@ -860,94 +580,56 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  line-height: 1.2;
   transition: all 0.3s ease;
 }
+/* =======================================================
+   ANIMACIÓN DE PULSO RÁPIDO CON PAUSA
+   ======================================================= */
+@keyframes pulsoConPausa {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.05); /* Latido rápido (crece) */
+  }
+  30% {
+    transform: scale(1);     /* Vuelve a su tamaño */
+  }
+  45% {
+    transform: scale(1.05); /* Segundo latido rápido */
+  }
+  60%, 100% {
+    transform: scale(1);     /* Pausa larga hasta reiniciar el ciclo */
+  }
+}
 
+/* Aplicar la animación a las tarjetas de la galería */
+.tarjeta-boton {
+  animation: pulsoConPausa 4s ease-in-out infinite; /* Ciclo total de 4 segundos (latidos al principio, pausa el resto del tiempo) */
+}
+
+/* Pausar la animación si el usuario coloca el cursor encima */
+.tarjeta-boton:hover {
+  animation-play-state: paused;
+}
 .btn-redondo-abrir:hover {
   transform: scale(1.08);
   background: linear-gradient(135deg, #ffffff 0%, #f4f6f8 50%, #e2e8f0 100%);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Desaparición del botón redondo */
 .contenedor-btn-redondo-orilla.desaparecer {
   opacity: 0;
   transform: translate(-50%, -15px);
   pointer-events: none;
 }
 
-/* =======================================================
-   PORTADA DE ENTITY / CARTA CON FOTO
-   ======================================================= */
 .pantalla-portada-carta {
-  position: fixed;
-  top: 95px; /* Inicia exactamente debajo del header en escritorio */
+  position: absolute;
+  top: 95px;
   left: 0;
   width: 100%;
   height: calc(100vh - 95px);
-  background-color: #ffffff;
-  z-index: 9999;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
-}
-.fotoportada{
-  align-self: center;
-  text-size-adjust: 245px, 245px;
-}
-.contenedor-foto-portada {
-  width: 100%;
-  height: 100%;
-}
-
-.foto-portada {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Animación que desliza la portada hacia abajo al abrir */
-.pantalla-portada-carta.deslizar-abajo {
-  transform: translateY(100vh);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* =======================================================
-   ADAPTACIONES RESPONSIVE PARA MÓVILES
-   ======================================================= */
-@media (max-width: 600px) {
-  /* En celular el header mide 27vh */
-  .contenedor-btn-redondo-orilla {
-    top: calc(27vh - 30px);
-  }
-
-  .btn-redondo-abrir {
-    width: 60px;
-    height: 60px;
-    font-size: 0.58rem;
-  }
-
-  .pantalla-portada-carta {
-    top: 27vh;
-    height: calc(100vh - 27vh);
-  }
-}
-
-
-
-/* =======================================================
-   ESTILOS PARA TU ESTRUCTURA DE PORTADA Y FOTO
-   ======================================================= */
-.pantalla-portada-carta {
-  position: fixed;
-  top: 95px; /* Debajo del header en escritorio */
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 95px);
-  background-color: #ffffff !important; /* Fondo blanco sólido */
+  background-color: #ffffff !important;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -966,14 +648,13 @@ body {
   padding: 20px;
 }
 
-/* Estilo para la etiqueta section que envuelve tu imagen */
 .contenedor-foto-portada section {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 260px; /* Ancho ideal en escritorio */
-  height: 340px; /* Altura tipo retrato vertical */
+  max-width: 270px;
+  height: 360px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -982,7 +663,6 @@ body {
   background-color: #f7f9fa;
 }
 
-/* Tu imagen con el ID fotoportada */
 #fotoportada {
   width: 100%;
   height: 100%;
@@ -991,24 +671,136 @@ body {
   display: block;
 }
 
-/* Animación de apertura (deslizar hacia abajo) */
 .pantalla-portada-carta.deslizar-abajo {
   transform: translateY(100vh);
   opacity: 0;
   pointer-events: none;
 }
 
-/* =======================================================
-   ADAPTACIÓN RESPONSIVE PARA MÓVILES
-   ======================================================= */
+/* 12. MEDIA QUERIES  */
 @media (max-width: 600px) {
+  .encabezado-fijo {
+    height: 27vh; 
+    padding: 15px 10px;
+  }
+
+  .titulo-pequeno {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .subtitulo-grande {
+    font-size: 2.4rem; 
+    font-weight: 700;
+  }
+
+  .btn-encabezado {
+    padding: 8px 18px;
+    font-size: 0.75rem;
+  }
+
+  .contenedor-principal {
+    margin-top: 0;
+    padding: 0 10px;
+  }
+
+  .caja-contenido {
+    padding: 20px 15px;
+  }
+
+  .caja-contenido h2, 
+  .caja-contenido h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .cuenta-regresiva {
+    padding: 12px 10px;
+    border-radius: 35px;
+  }
+
+  .numero-tiempo {
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+
+  .etiqueta-tiempo {
+    font-size: 0.6rem;
+  }
+
+
+  .efecto-maquina,
+  .texto-seccion-bloque,
+  .caja-texto-boton .texto-seccion-bloque {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .titulo-cinzel {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .titulo-seccion-elegante {
+    font-size: 1.9rem;
+    font-weight: normal;
+  }
+
+  .texto-dress-code-formal {
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+  }
+
+  .galeria-botones-adaptable {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .tarjeta-boton {
+    max-width: 100%;
+  }
+
+  .img-boton {
+    max-height: 120px;
+  }
+
+  .texto-boton {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .contenedor-btn-redondo-orilla {
+    top: calc(27vh - 32px);
+  }
+
+  .btn-redondo-abrir {
+    width: 65px;
+    height: 65px;
+    font-size: 0.65rem;
+    font-weight: 800;
+  }
+
   .pantalla-portada-carta {
-    top: 27vh; /* Coincide con la altura del header en celular */
+    top: 27vh;
     height: calc(100vh - 27vh);
   }
 
   .contenedor-foto-portada section {
-    max-width: 210px; /* Tamaño adaptado para pantallas de celulares */
-    height: 270px;
+    max-width: 220px;
+    height: 290px;
+  }
+
+  .gif-esquina-superior-derecha {
+    width: 380px;
+    right: -170px;
+    transform: translateY(-15%);
+  }
+
+  .gif-esquina-inferior-izquierda {
+    width: 320px;
+    bottom: -60px;
+    left: -160px;
   }
 }

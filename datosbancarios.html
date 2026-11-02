@@ -23,21 +23,15 @@
 </head>
 <body>
 
-  <!-- =======================================================
-       1. ENCABEZADO FIJO (MISMO QUE LA PÁGINA PRINCIPAL)
-       ======================================================= -->
+  <!--1. ENCABEZADO  (-->
   <header class="encabezado-fijo">
     <div class="bloque-titulos-encabezado">
       <span class="titulo-pequeno">MIS XV AÑOS</span>
       <h1 class="subtitulo-grande">MIA NAHOMI</h1>
     </div>
-    
-    <button class="btn-encabezado">Confirmar asistencia</button>
+  
   </header>
 
-  <!-- =======================================================
-       CONTENIDO PRINCIPAL
-       ======================================================= -->
   <main class="contenedor-principal">
 
     <!-- 1. ESPACIO DE TEXTO SUPERIOR -->
@@ -47,8 +41,8 @@
         Tu presencia es mi mayor regalo, pero si deseas hacerme un detalle, puedes realizar una transferencia o depósito a la siguiente cuenta bancaria:
       </p>
     </section>
-
-    <!-- 2. TARJETA BANCARIA DIGITAL (5 FILAS / COLUMNAS CON BOTÓN DE COPIAR) -->
+  <section class="caja-contenido">
+    <!-- 2. TARJETA BANCARIA DIGITAL ( CON BOTÓN DE COPIAR) -->
     <section class="tarjeta-bancaria texto-seccion-bloque">
       
       <!-- Detalle visual superior de la tarjeta -->
@@ -64,7 +58,7 @@
         <div class="fila-dato">
           <div class="info-dato">
             <span class="etiqueta-dato">Banco</span>
-            <span class="valor-dato" id="dato-banco">banco1</span>
+            <span class="valor-dato" id="dato-banco">banco</span>
           </div>
           <button class="btn-copiar" onclick="copiarTexto('dato-banco', this)">Copiar</button>
         </div>
@@ -73,7 +67,7 @@
         <div class="fila-dato">
           <div class="info-dato">
             <span class="etiqueta-dato">Titular</span>
-            <span class="valor-dato" id="dato-titular"></span>
+            <span class="valor-dato" id="dato-titular">numero</span>
           </div>
           <button class="btn-copiar" onclick="copiarTexto('dato-titular', this)">Copiar</button>
         </div>
@@ -82,7 +76,7 @@
         <div class="fila-dato">
           <div class="info-dato">
             <span class="etiqueta-dato">Número de Cuenta</span>
-            <span class="valor-dato" id="dato-cuenta"></span>
+            <span class="valor-dato" id="dato-cuenta">numero</span>
           </div>
           <button class="btn-copiar" onclick="copiarTexto('dato-cuenta', this)">Copiar</button>
         </div>
@@ -91,7 +85,7 @@
         <div class="fila-dato">
           <div class="info-dato">
             <span class="etiqueta-dato">CLABE Interbancaria</span>
-            <span class="valor-dato" id="dato-clabe"></span>
+            <span class="valor-dato" id="dato-clabe">numero</span>
           </div>
           <button class="btn-copiar" onclick="copiarTexto('dato-clabe', this)">Copiar</button>
         </div>
@@ -100,19 +94,18 @@
         <div class="fila-dato">
           <div class="info-dato">
             <span class="etiqueta-dato">Número de Tarjeta</span>
+            <span class="valor-dato" id="dato-tarjeta">numero</span>
           </div>
           <button class="btn-copiar" onclick="copiarTexto('dato-tarjeta', this)">Copiar</button>
         </div>
 
       </div>
-
+</section>
     </section>
 
   </main>
 
-  <!-- =======================================================
-       SCRIPTS: ANIMACIÓN DE ENTRADA Y FUNCIÓN DE COPIAR
-       ======================================================= -->
+  <!--SCRIPTS: ANIMACIÓN DE ENTRADA Y FUNCIÓN DE COPIAR -->
   <script>
     // Función para copiar el texto al portapapeles
     function copiarTexto(idElemento, boton) {

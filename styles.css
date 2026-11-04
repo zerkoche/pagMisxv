@@ -1,6 +1,4 @@
-/* =======================================================
-   1. FUENTES Y RESETEO GLOBAL
-   ======================================================= */
+/* 1. FUENTES Y RESETEO GLOBAL */
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @font-face {
@@ -41,9 +39,7 @@ body {
   text-align: center;
 }
 
-/* =======================================================
-   2. DECORACIÓN / GIFS DE FONDO
-   ======================================================= */
+/* 2. DECORACIÓN / GIFS DE FONDO*/
 .gif-fondo {
   position: fixed;
   z-index: -1;
@@ -67,9 +63,7 @@ body {
   height: auto;
 }
 
-/* =======================================================
-   3. ENCABEZADO FIJO (ESCRITORIO)
-   ======================================================= */
+/* 3. ENCABEZADO FIJO (ESCRITORIO) */
 .encabezado-fijo {
   position: relative;
   width: 100%;
@@ -82,8 +76,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: visible !important; /* <--- Esto es vital para que el botón no se corte ni se mueva al fondo */
+  overflow: visible !important;
 }
+
 .bloque-titulos-encabezado {
   text-align: center;
   display: flex;
@@ -113,26 +108,7 @@ body {
   text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.encabezado-fijo .btn-encabezado {
-  background: linear-gradient(135deg, #f7f9fa 0%, #e2e8f0 50%, #cbd5e0 100%);
-  color: #1a202c;
-  border: 1px solid #a0aec0;
-  padding: 6px 18px;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.75rem;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all 0.35s ease;
-  margin-top: 4px;
-}
-
-/* =======================================================
-   4. BOTONES Y ESTILOS PLATEADOS
-   ======================================================= */
+/* 4. BOTONES Y ESTILOS PLATEADOS */
 .btn-encabezado {
   background: linear-gradient(135deg, #f7f9fa 0%, #e2e8f0 50%, #cbd5e0 100%);
   color: #1a202c;
@@ -178,9 +154,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* =======================================================
-   5. CONTENEDOR PRINCIPAL Y CAJAS DE CONTENIDO
-   ======================================================= */
+/* 5. CONTENEDOR PRINCIPAL Y CAJAS DE CONTENIDO */
 .contenedor-principal {
   margin-top: 0;
   max-width: 800px;
@@ -203,7 +177,207 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
+/* ESTILOS PARA EL CARRUSEL DE 11 IMÁGENES */
+/* ==========================================
+   CARRUSEL 1 (Movimiento hacia la derecha)
+   ========================================== */
+.carrusel-contenedor {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 15px;
+  position: relative;
+}
 
+.carrusel-track {
+  display: flex;
+  gap: 15px !important; /* Espacio separado entre cada imagen */
+  padding: 5px 0;
+  /* Ancho exacto calculado para las 11 imágenes + sus espacios para asegurar que la animación corra fluida */
+  width: calc((250px * 22) + (15px * 22)); 
+  animation: desplazarDerecha 35s linear infinite;
+}
+
+.carrusel-contenedor:hover .carrusel-track {
+  animation-play-state: paused;
+}
+
+.carrusel-item {
+  flex: 0 0 250px;
+  height: 350px;
+  border-radius: 8px !important; /* Ligeros bordes redondeados elegantes */
+  overflow: hidden;
+  background-color: #f7f9fa;
+  border: 2px solid #ffffff !important; /* Sutil marco limpio */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes desplazarDerecha {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ==========================================
+   CARRUSEL 1 (Lento, Completo y sin recortes)
+   ========================================== */
+.carrusel-contenedor {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 15px;
+  position: relative;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 15px !important; /* Espacio limpio entre cada foto */
+  padding: 5px 0;
+  width: max-content;
+  animation: desplazarDerecha 55s linear infinite; /* 55s para hacerlo más lento y suave */
+}
+
+.carrusel-contenedor:hover .carrusel-track {
+  animation-play-state: paused;
+}
+
+.carrusel-item {
+  flex: 0 0 240px; /* Ancho de la tarjeta */
+  height: 340px;   /* Altura fija de la tarjeta */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo sutil para que luzca agradable si la foto es vertical u horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* Muestra la imagen completa sin recortes */
+  display: block;
+}
+
+@keyframes desplazarDerecha {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ==========================================
+   CARRUSEL 1 (Unidas, sin espacios, lento y completo)
+   ========================================== */
+.carrusel-contenedor {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 15px;
+  position: relative;
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 0px !important; /* Cero espacio entre imágenes */
+  padding: 0px !important;
+  width: max-content;
+  animation: desplazarDerecha 55s linear infinite;
+}
+
+.carrusel-contenedor:hover .carrusel-track {
+  animation-play-state: paused;
+}
+
+.carrusel-item {
+  flex: 0 0 240px; /* Ancho de la tarjeta */
+  height: 340px;   /* Altura fija */
+  border-radius: 0px !important; /* Sin bordes redondeados para que se fundan */
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo translúcido sutil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* Muestra la imagen completa sin recortes */
+  display: block;
+}
+
+@keyframes desplazarDerecha {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* ==========================================
+   CARRUSEL 2 (Unidas, sin espacios, lento, hacia la izquierda)
+   ========================================== */
+.carrusel-contenedor-2 {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 15px;
+  position: relative;
+}
+
+.carrusel-track-2 {
+  display: flex;
+  gap: 0px !important; /* Cero espacio entre imágenes */
+  padding: 0px !important;
+  width: max-content;
+  animation: deslizarIzquierdaUnico 55s linear infinite;
+}
+
+.carrusel-contenedor-2:hover .carrusel-track-2 {
+  animation-play-state: paused;
+}
+
+.carrusel-item-2 {
+  flex: 0 0 240px; /* Ancho de la tarjeta */
+  height: 340px;   /* Altura fija */
+  border-radius: 0px !important; /* Sin bordes redondeados */
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo translúcido sutil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+}
+
+.carrusel-item-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important; /* Muestra la imagen completa sin recortes */
+  display: block;
+}
+
+@keyframes deslizarIzquierdaUnico {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
 .caja-contenido h2, 
 .caja-contenido h3 {
   font-family: 'Playfair Display', serif;
@@ -224,9 +398,7 @@ body {
   gap: 15px;
 }
 
-/* =======================================================
-   6. TIPOGRAFÍAS Y TEXTOS
-   ======================================================= */
+/* 6. TIPOGRAFÍAS Y TEXTOS */
 .efecto-maquina,
 .texto-seccion-bloque,
 .caja-texto-boton .texto-seccion-bloque {
@@ -284,9 +456,7 @@ body {
   margin-top: 4px;
 }
 
-/* =======================================================
-   7. IMÁGENES Y CONTENEDORES VISUALES
-   ======================================================= */
+/* 7. IMÁGENES Y CONTENEDORES VISUALES */
 .btn-play-minimalista.fijo-en-header {
   position: fixed;
   top: 25px;
@@ -340,9 +510,7 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-/* =======================================================
-   8. REPRODUCTOR DE AUDIO
-   ======================================================= */
+/* 8. REPRODUCTOR DE AUDIO */
 .reproductor-minimalista {
   display: flex;
   flex-direction: column;
@@ -402,9 +570,7 @@ body {
   display: none !important;
 }
 
-/* =======================================================
-   9. CUENTA REGRESIVA
-   ======================================================= */
+/* 9. CUENTA REGRESIVA */
 .cuenta-regresiva {
   display: flex;
   justify-content: space-between;
@@ -442,9 +608,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* =======================================================
-   10. GALERÍA DE BOTONES Y MESA DE REGALOS
-   ======================================================= */
+/* 10. GALERÍA DE BOTONES Y MESA DE REGALOS */
 .galeria-botones-adaptable {
   display: flex;
   flex-direction: row;
@@ -520,9 +684,7 @@ body {
   max-width: 150px;
 }
 
-/* =======================================================
-   11. INTERACTIVIDAD PORTADA Y HEADER (ESCRITORIO)
-   ======================================================= */
+/* 11. INTERACTIVIDAD PORTADA Y HEADER (ESCRITORIO) */
 .btn-encabezado.oculto-inicio {
   opacity: 0;
   visibility: hidden;
@@ -539,9 +701,9 @@ body {
 /* Botón redondo posicionado exactamente a la mitad del borde del header */
 .contenedor-btn-redondo-orilla {
   position: absolute !important;
-  top: 190px !important; /* Coincide exactamente con la altura del header de escritorio */
+  top: 190px !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important; /* Lo centra horizontalmente y lo sube la mitad para que quede entre el header y la carta */
+  transform: translate(-50%, -50%) !important;
   z-index: 10000 !important;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -580,7 +742,6 @@ body {
 
 /* ESTILOS PARA EL BOTÓN DE CONFIRMAR ASISTENCIA FINAL */
 .caja-boton-final-centrado {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -592,14 +753,9 @@ body {
   border: none !important;
   box-shadow: none !important;
 }
-.btn-grande-final {
-  font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important;
-}
 
 .btn-grande-final {
- font-family: 'Playfair Display', serif !important;
-  font-weight: 600 !important; /* Asegura que tome un grosor elegante y visible */
+  font-family: 'Playfair Display', serif !important;
   font-size: 1rem;       
   padding: 16px 36px;    
   letter-spacing: 2.5px; 
@@ -685,9 +841,7 @@ body {
   pointer-events: none;
 }
 
-/* =======================================================
-   12. MEDIA QUERIES (RESPONSIVE MÓVIL)
-   ======================================================= */
+/* 12. MEDIA QUERIES (RESPONSIVE MÓVIL) */
 @media (max-width: 600px) {
   .encabezado-fijo {
     min-height: 150px; 
@@ -797,15 +951,14 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Posicionamiento exacto del botón en móvil para que quede a la mitad */
- /* Posicionamiento exacto del botón en móvil */
   .contenedor-btn-redondo-orilla {
     position: absolute !important;
-    top: 150px !important; /* Se alinea matemáticamente con el borde del header móvil (150px) */
+    top: 150px !important;
     bottom: auto !important;
     left: 50% !important;
-    transform: translate(-50%, -50%) !important; /* Lo centra y sube la mitad para que quede perfecto en el corte */
+    transform: translate(-50%, -50%) !important;
   }
+
   .btn-redondo-abrir {
     width: 65px;
     height: 65px;
@@ -813,7 +966,6 @@ body {
     font-weight: 800;
   }
 
-  /* Pantalla de portada fija adaptada a la altura del header móvil */
   .pantalla-portada-carta {
     position: fixed;
     top: 150px;
@@ -837,10 +989,9 @@ body {
   }
 
   .btn-grande-final {
-    font-family: 'Playfair Display', serif   ;
     font-size: 0.95rem;  
     padding: 14px 28px;  
-    width: 90%;          
+    width: 90%;           
     max-width: 300px;
   }
 
@@ -848,6 +999,8 @@ body {
     font-size: 0.95rem;
   }
 }
+
+/* Tipografía elegante global para elementos interactivos */
 .tarjeta-boton,
 .btn-encabezado,
 .btn-grande-final,
@@ -855,5 +1008,5 @@ body {
 button,
 a.tarjeta-boton {
   font-family: 'Playfair Display', serif !important;
-  letter-spacing: 1px; /* Hace que las letras respiren elegantemente */
+  letter-spacing: 1px;
 }

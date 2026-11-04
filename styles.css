@@ -2,7 +2,7 @@
    1. FUENTES Y RESETEO GLOBAL
    ======================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @font-face {
   font-family: 'Brittany Signature';
   src: url('fuentes/brittany-signature.ttf') format('truetype');
@@ -82,9 +82,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: visible !important; /* Vital para que el botón sobresalga hacia abajo */
+  overflow: visible !important; /* <--- Esto es vital para que el botón no se corte ni se mueva al fondo */
 }
-
 .bloque-titulos-encabezado {
   text-align: center;
   display: flex;
@@ -539,12 +538,11 @@ body {
 
 /* Botón redondo posicionado exactamente a la mitad del borde del header */
 .contenedor-btn-redondo-orilla {
-  position: absolute;
-  bottom: -35px !important;
-  top: auto !important;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10000;
+  position: absolute !important;
+  top: 190px !important; /* Coincide exactamente con la altura del header de escritorio */
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important; /* Lo centra horizontalmente y lo sube la mitad para que quede entre el header y la carta */
+  z-index: 10000 !important;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -582,6 +580,7 @@ body {
 
 /* ESTILOS PARA EL BOTÓN DE CONFIRMAR ASISTENCIA FINAL */
 .caja-boton-final-centrado {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -593,8 +592,14 @@ body {
   border: none !important;
   box-shadow: none !important;
 }
+.btn-grande-final {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important;
+}
 
 .btn-grande-final {
+ font-family: 'Playfair Display', serif !important;
+  font-weight: 600 !important; /* Asegura que tome un grosor elegante y visible */
   font-size: 1rem;       
   padding: 16px 36px;    
   letter-spacing: 2.5px; 
@@ -832,6 +837,7 @@ body {
   }
 
   .btn-grande-final {
+    font-family: 'Playfair Display', serif   ;
     font-size: 0.95rem;  
     padding: 14px 28px;  
     width: 90%;          
@@ -841,4 +847,13 @@ body {
   .caja-contenido .caja-texto p {
     font-size: 0.95rem;
   }
+}
+.tarjeta-boton,
+.btn-encabezado,
+.btn-grande-final,
+.texto-boton,
+button,
+a.tarjeta-boton {
+  font-family: 'Playfair Display', serif !important;
+  letter-spacing: 1px; /* Hace que las letras respiren elegantemente */
 }

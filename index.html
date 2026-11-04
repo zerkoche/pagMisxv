@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 
   <!-- TIPOGRAFÍAS DEL PROYECTO -->
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Cinzel+Decorative:wght@400;700&family=Great+Vibes&family=Parisienne&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sacramento&display=swap" rel="stylesheet">
@@ -49,8 +50,8 @@
 
     <!-- A. Primera caja de texto con efecto máquina y reproductor de audio dentro -->
     <section class="caja-contenido">
-      <p class="efecto-maquina" id="textoMaquina">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
-      
+      <p class="efecto-maquina" id="textoMaquina" style="color: #225685;">UNA NOCHE, CON MIL ESTRELLAS, DONDE CADA UNA GUARDA UN SUEÑO Y HOY QUIERO COMPARTIR UNO DE LOS MIOS CONTIGO</p>
+    </section>
       <!-- Reproductor de audio minimalista -->
       <div class="reproductor-minimalista" style="margin-top: 20px;">
         <audio id="miAudio" preload="metadata" loop>
@@ -123,8 +124,14 @@
     </section>
 
     <!-- D. Sección Dress Code -->
-    <section class="caja-contenido">
-      <h2 class="titulo-seccion-elegante">DRESS CODE</h2>
+<section class="caja-contenido" style="text-align: center;">
+      <!-- Contenedor para las dos imágenes decorativas superiores -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 12px;">
+        <img src="canva/asset/dresswom.png" alt="Decoración Dress Code 1" style="width: 45px; height: auto; object-fit: contain;">
+        <img src="canva/asset/dressMale.png" alt="Decoración Dress Code 2" style="width: 45px; height: auto; object-fit: contain;">
+      </div>
+
+      <h2 class="titulo-seccion-elegante" style="margin-top: 0;">DRESS CODE</h2>
       <span class="titulo-pequeno">FORMAL</span>
     </section>
 
@@ -153,29 +160,31 @@
     </section>
 
     <!-- E. Sección Mesa de Regalos / Enlace -->
-    <section class="caja-contenido caja-texto-boton">
-      <p class="texto-seccion-bloque">
+   <section class="caja-contenido caja-texto-boton">
+      <p class="texto-seccion-bloque" style="color: #225685;">
         Tu presencia es mi mejor regalo. Pero si no sabes qué obsequiarme y deseas tener un detalle conmigo. <br>¡ME HARÍAS MUY FELIZ AYUDÁNDOME A CUMPLIR MIS SUEÑOS!
       </p>
+    </section>
       
-      <!-- Contenedor que agrupa ambos botones lado a lado -->
-      <div class="contenedor-dos-botones" style="margin-top: 20px;">
-        <!-- Botón 1 -->
+     <!-- Contenedor que agrupa la imagen arriba y el botón abajo -->
+      <div class="contenedor-dos-botones" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        
+        <!-- Imagen decorativa (ya no es un botón) -->
+        <div class="tarjeta-imagen-estatica">
+          <img src="canva/asset/giftblue.png" alt="Decoración regalo" class="img-boton">
+        </div>
+
+        <!-- Botón principal (Datos bancarios / Micrófono) -->
         <a href="datosbancarios.html" rel="noopener noreferrer" class="tarjeta-boton">
           <img src="canva/asset/MICROFONO.png" alt="Ir a datos bancarios" class="img-boton">
+          <span class="texto-boton" style="margin-top: 10px;">Da click</span>
         </a>
 
-        <!-- Botón 2 -->
-        <a href="datosbancarios.html" target="_blank" rel="noopener noreferrer" class="tarjeta-boton">
-          <img src="canva/asset/giftblue.png" alt="Segundo botón" class="img-boton">
-        </a>
       </div>
-      <span class="texto-boton" style="margin-top: 10px;">Da click</span>
-    </section>
 
     <!-- F. Sección Canción / Playlist -->
     <section class="caja-contenido">
-      <h2 class="titulo-cinzel texto-seccion-bloque2">¿Qué canción no puede faltar en la playlist?</h2>
+ <h2 class="titulo-cinzel texto-seccion-bloque2" >¿Qué canción no puede faltar en la playlist?</h2>
       <div class="contenedor-imagen-ritmo" style="margin-top: 15px;">
         <img src="canva/asset/musica.png" alt="Detalle Musical" class="img-balanceo-musical">
       </div>
@@ -183,18 +192,20 @@
     </section>
 
     <!-- G. Frase Final -->
-    <section class="caja-contenido">
-      <p class="texto-principal-playfair texto-seccion-bloque">
+   <section class="caja-contenido">
+<section class="caja-contenido">
+      <p class="texto-principal-playfair texto-seccion-bloque" style="font-size: 1.4rem; line-height: 1.5; color: #225685;">
         "Espero vengas a brillar conmigo en esta noche especial."
       </p>
-    </section>
+  </section>
+  </section>
 
     <!-- Sección final para el botón de Confirmar Asistencia -->
-    <section class="caja-contenido caja-boton-final-centrado">
-      <a href="URL_DE_CONFIRMACION" target="_blank" rel="noopener noreferrer" class="btn-encabezado btn-grande-final">
-        Confirmar Asistencia
-      </a>
-    </section>
+<section class="caja-contenido caja-boton-final-centrado">
+  <a href="URL_DE_CONFIRMACION" target="_blank" rel="noopener noreferrer" class="btn-encabezado btn-grande-final">
+    <span style="font-family: 'Playfair Display', serif !important; text-transform: none !important;">Confirmar Asistencia</span>
+  </a>
+</section>
   </main>
 
   <!-- 5. SCRIPTS JAVASCRIPT -->

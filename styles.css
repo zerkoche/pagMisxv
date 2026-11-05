@@ -730,29 +730,38 @@ body {
   padding: 20px;
 }
 
+
+/* Contenedor exacto adaptado a la foto horizontal */
 .contenedor-foto-portada section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 270px;
-  height: 360px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  border: 4px solid #ffffff;
-  outline: 1px solid #e2e8f0;
-  background-color: #f7f9fa;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 95vw !important;
+  max-height: 85vh !important;
+  border-radius: 0px !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
+/* Imagen rotada y ajustada sin contenedores forzados */
 #fotoportada {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+  transform: rotate(-90deg) !important;
+  width: 75vh !important;       /* Ajusta este valor si la quieres un poco más grande o chica */
+  height: auto !important;
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+  object-fit: contain !important; 
+  display: block !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
 }
-
 .pantalla-portada-carta.deslizar-abajo {
   transform: translateY(100vh);
   opacity: 0;

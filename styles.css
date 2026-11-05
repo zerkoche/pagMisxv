@@ -283,11 +283,11 @@ body {
   width: max-content;
   animation: deslizarIzquierdaUnico 55s linear infinite;
 }
-
+/*
 .carrusel-contenedor-2:hover .carrusel-track-2 {
   animation-play-state: paused;
 }
-
+*/
 .carrusel-item-2 {
   flex: 0 0 240px;
   height: 340px;

@@ -232,10 +232,10 @@ body {
   width: max-content;
   animation: desplazarDerecha 55s linear infinite;
 }
-
+/*
 .carrusel-contenedor:hover .carrusel-track {
   animation-play-state: paused;
-}
+}*/
 
 .carrusel-item {
   flex: 0 0 240px;

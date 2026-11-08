@@ -23,20 +23,32 @@ body.scroll-bloqueado {
   touch-action: none;
 }
 
+/* ==========================================
+   FONDO DIFERENCIADO (ESCRITORIO Y MÓVIL)
+   ========================================== */
 body {
   font-family: 'Playfair Display', system-ui, -apple-system, sans-serif;
-  background-image: url('canva/asset/Gemini_Generated_Image_dtb287dtb287dtb2.jpg');
+  /* Imagen de fondo exclusiva para ESCRITORIO */
+  background-image: url('canva/asset/newBG.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Mantiene la imagen estática y fija al hacer scroll */
   color: #333333;
   line-height: 1.6;
   padding-bottom: 40px;
 }
 
-.texto-centrado {
-  text-align: center;
+/* Ajustes y cambio de imagen para dispositivos MÓVILES */
+@media (max-width: 600px) {
+  body {
+    /* Imagen de fondo exclusiva para MÓVIL 
+       (Recuerda cambiar 'fondo-movil.jpg' por el nombre real de tu archivo de celular) */
+    background-image: url('canva/asset/newbgM.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed !important; /* Mantiene el efecto fijo también en celulares */
+  }
 }
 
 
@@ -184,8 +196,8 @@ body {
   margin: 45px auto;
   padding: 30px 20px;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  background-color: rgba(255, 255, 255, 0.444);
+  border: 1px solid rgba(226, 232, 240, 0.366);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
@@ -933,4 +945,56 @@ button,
 a.tarjeta-boton {
   font-family: 'Playfair Display', serif !important;
   letter-spacing: 1px;
+}
+/* ==========================================
+   ESTILOS AJUSTADOS PARA EL HEADER CON IMÁGENES
+   ========================================== */
+.encabezado-fijo {
+  position: relative;
+  width: 100%;
+  height: 190px !important;       /* Altura exacta del header anterior en escritorio */
+  min-height: 190px !important;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}
+
+/* Imagen de escritorio ajustada al tamaño exacto */
+.img-header-desktop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;     /* Llena el espacio perfectamente sin deformar */
+  display: block;
+}
+
+.img-header-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+}
+
+/* En dispositivos móviles (menor a 600px), ajustamos a la altura anterior de 150px */
+@media (max-width: 600px) {
+  .encabezado-fijo {
+    height: 150px !important;     /* Altura exacta del header anterior en móvil */
+    min-height: 150px !important;
+    padding: 0 !important;
+  }
+
+  .img-header-desktop {
+    display: none !important;
+  }
+  
+  .img-header-mobile {
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
 }
